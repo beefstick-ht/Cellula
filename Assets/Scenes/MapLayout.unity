@@ -7927,6 +7927,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77b356542a494647bead16f4cec6bf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  moveSpeed: 5
+  rotateSpeed: 100
+  gravity: 9.8
+  groundCheckRadius: 0.15
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!136 &1296813809
 CapsuleCollider:
   m_ObjectHideFlags: 0

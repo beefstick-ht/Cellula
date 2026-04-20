@@ -5,6 +5,11 @@ using System.ComponentModel.Design;
 [CreateAssetMenu(fileName = "PlayerManager", menuName = "Scriptable Objects/PlayerManager")]
 public class PlayerManager : ScriptableObject
 {
+    private GameObject playerPrefab;
+
+    public GameObject ActivePlayer { get; private set; }
+    [SerializeField]
+    private PlayerStats startingPlayerStats;
     public PlayerStats PlayerStats {  get; private set; }
     public GameState GameState { get; set; }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections;
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance{ get; private set; }
+    public static GameManager Instance{ get; private set; }
 
     [SerializeField]
     private GameState startingState;
@@ -16,14 +16,14 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if(instance != null && instance != this)
+        if(Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         else
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(this);
         }
 

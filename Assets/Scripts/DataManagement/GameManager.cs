@@ -5,8 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance{ get; private set; }
 
-    [SerializeField]
-    private GameState startingState;
+   [SerializeField] private GameState startingState;
 
     public GameState GameState { get; private set; }
 

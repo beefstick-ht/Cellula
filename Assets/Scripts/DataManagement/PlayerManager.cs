@@ -48,7 +48,7 @@ public class PlayerManager : ScriptableObject
 
                     //spawn location set, so spawn player there
 
-                    ActivePlayer = Instantiate(playerPrefab, spawn.transform.position, Quaternion.identity);
+                    ActivePlayer = Instantiate(playerPrefab, spawn.transform.position, spawn.transform.rotation);
                     break;
                 }
 
@@ -61,7 +61,7 @@ public class PlayerManager : ScriptableObject
         else
         {
             //create instance of player prefab at default spawn location for level
-            ActivePlayer = Instantiate(playerPrefab, spawnTransform.position, Quaternion.identity);
+            ActivePlayer = Instantiate(playerPrefab, spawnTransform.position, spawnTransform.rotation);
             Debug.Log("Player spawned at default location " + spawnTransform);
         }
 

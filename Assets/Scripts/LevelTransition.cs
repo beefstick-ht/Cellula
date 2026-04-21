@@ -13,7 +13,7 @@ public class LevelTransition : MonoBehaviour
 
     void Start()
     {
-        canvas = FindObjectOfType<Canvas>();
+        canvas = FindFirstObjectByType<Canvas>();
 
         if(sceneToLoad == null)
         {
@@ -51,15 +51,17 @@ public class LevelTransition : MonoBehaviour
             }
 
             //player cannot move
-            Rigidbody playerBody = collider.gameObject.GetComponent<Rigidbody>();
-            playerBody.isKinematic = true;
+            PlayerController playerController = collider.gameObject.GetComponent<PlayerController>();
+            playerController.enabled = false;
 
             //player will walk towards the entrance direction
-            Vector2 entranceDirection = (transform.position - playerBody.transform.position).normalized;
+            Vector2 entranceDirection = (transform.position - playerController.transform.position).normalized;
 
-            playerBody.linearVelocity = entranceDirection * enterSpeed;
+            // playerController.linearVelocity = entranceDirection * enterSpeed;
 
-            transitionAnimator = Instantiate(fadeAnimation, canvas.transform).GetComponent<Animator>();
+            // transitionAnimator = Instantiate(fadeAnimation, canvas.transform).GetComponent<Animator>();
+
+            SceneManager.LoadScene(sceneToLoad);
         }
     }
 }

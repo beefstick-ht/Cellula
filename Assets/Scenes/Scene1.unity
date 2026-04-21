@@ -714,7 +714,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1862580886}
-  - component: {fileID: 1862580885}
   - component: {fileID: 1862580884}
   m_Layer: 0
   m_Name: GameManager
@@ -738,19 +737,6 @@ MonoBehaviour:
   startingState: {fileID: 11400000, guid: d0fb2d5c4048ee9499c3c23029df5aee, type: 2}
   levelManager: {fileID: 11400000, guid: e5a951537c594a744a99bbc522b878ec, type: 2}
   playerManager: {fileID: 11400000, guid: a1a68f399db16054ca55084676afe915, type: 2}
---- !u!114 &1862580885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862580883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf776156b23aa7543825ae8f31a4fae8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameLevel
-  defaultPlayerSpawn: {fileID: 308736905}
 --- !u!4 &1862580886
 Transform:
   m_ObjectHideFlags: 0

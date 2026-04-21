@@ -19,7 +19,8 @@ public class PlayerManager : ScriptableObject
 
     private void OnEnable()
     {
-        LevelEvents.levelLoaded += SpawnPlayer;
+        LevelEvents.levelLoaded -= SpawnPlayer; // remove first if already added
+        LevelEvents.levelLoaded += SpawnPlayer; // then add once
 
         //dupliate on start so values do not change in the editor
         PlayerStats = Instantiate(startingPlayerStats);
@@ -27,7 +28,13 @@ public class PlayerManager : ScriptableObject
 
     protected void SpawnPlayer(Transform spawnTransform)
     {
-        if(GameState.playerSpawnLocation != "")
+        if (GameState == null)
+        {
+            Debug.LogError("GameState is null in PlayerManager - GameManager may not have set it yet");
+            return;
+        }
+
+        if (GameState.playerSpawnLocation != "")
         {
             GameObject[] spawns = GameObject.FindGameObjectsWithTag(spawnTag);
             bool foundSpawn = false;
@@ -60,13 +67,13 @@ public class PlayerManager : ScriptableObject
 
         if (ActivePlayer)
         {
-            PlayerEvents.onPlayerSpawned.Invoke(ActivePlayer.transform);
+            PlayerEvents.onPlayerSpawned?.Invoke(ActivePlayer.transform);
         }
         else
         {
-            throw new MissingReferenceException("No ActivePlayer in PlayerManager. May have failed to spawn.");
+            throw new MissingReferenceException("No ActivePlayer in PlayerManager.");
         }
-        
+
     }
 
     private void OnDisable()

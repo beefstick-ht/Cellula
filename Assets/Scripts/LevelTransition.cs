@@ -61,7 +61,7 @@ public class LevelTransition : MonoBehaviour
 
             // transitionAnimator = Instantiate(fadeAnimation, canvas.transform).GetComponent<Animator>();
 
-            SceneManager.LoadScene(sceneToLoad);
+            LevelEvents.levelExit?.Invoke(sceneToLoad, playerSpawnTransformName);
         }
     }
 }

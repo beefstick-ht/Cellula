@@ -34,15 +34,20 @@ public class PlayerManager : ScriptableObject
             return;
         }
 
+        Debug.Log("SpawnPlayer called, playerSpawnLocation = '" + GameState.playerSpawnLocation + "'");
+
         if (GameState.playerSpawnLocation != "")
         {
+            Debug.Log("Looking for spawn named: " + GameState.playerSpawnLocation);
             GameObject[] spawns = GameObject.FindGameObjectsWithTag(spawnTag);
+            Debug.Log("Found " + spawns.Length + " objects with tag: " + spawnTag);
             bool foundSpawn = false;
 
             foreach(GameObject spawn in spawns)
             {
+                Debug.Log("Checking spawn: " + spawn.name);
                 //if matching spawn name
-                if(spawn.name == GameState.playerSpawnLocation)
+                if (spawn.name == GameState.playerSpawnLocation)
                 {
                     foundSpawn = true;
 
@@ -67,6 +72,7 @@ public class PlayerManager : ScriptableObject
 
         if (ActivePlayer)
         {
+            GameState.playerSpawnLocation = "";
             PlayerEvents.onPlayerSpawned?.Invoke(ActivePlayer.transform);
         }
         else

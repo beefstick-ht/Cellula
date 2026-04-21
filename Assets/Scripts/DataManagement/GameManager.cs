@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public LevelManager levelManager;
     public PlayerManager playerManager;
-    public UIManager uiManager;
+    //public UIManager uiManager;
 
     private void Awake()
     {

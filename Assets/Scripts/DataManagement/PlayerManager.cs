@@ -5,6 +5,7 @@ using System.ComponentModel.Design;
 [CreateAssetMenu(fileName = "PlayerManager", menuName = "Scriptable Objects/PlayerManager")]
 public class PlayerManager : ScriptableObject
 {
+    [SerializeField]
     private GameObject playerPrefab;
 
     public GameObject ActivePlayer { get; private set; }
@@ -53,8 +54,8 @@ public class PlayerManager : ScriptableObject
         else
         {
             //create instance of player prefab at default spawn location for level
-            ActivePlayer = Instantiate(playerPrefab, defaultSpawnTransform.position, Quaternion.identity);
-            Debug.Log("Player spawned at default location " + defaultSpawnTransform);
+            ActivePlayer = Instantiate(playerPrefab, spawnTransform.position, Quaternion.identity);
+            Debug.Log("Player spawned at default location " + spawnTransform);
         }
 
         if (ActivePlayer)

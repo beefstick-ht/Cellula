@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         }
 
         GameState = Instantiate(startingState);
-        GameState.playerSpawnLocation = "PlayerSpawn";
+        GameState.playerSpawnLocation = "";
         levelManager.GameState = GameState;
         playerManager.GameState = GameState;
     }

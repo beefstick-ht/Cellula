@@ -36,7 +36,7 @@ public class PlayerManager : ScriptableObject
 
         if (GameState.playerSpawnLocation != "")
         {
-            GameObject[] spawns = GameObject.FindGameObjectsWithTag(spawnTag);
+            GameObject[] spawns = GameObject.FindGameObjectsWithTag("PlayerSpawn");
             bool foundSpawn = false;
 
             foreach(GameObject spawn in spawns)

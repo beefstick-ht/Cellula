@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
   triggererTag: Player
-  playerSpawnTransformName: NOT SET
+  playerSpawnTransformName: PlayerSpawnLeft
   enterSpeed: 1
   sceneToLoad: Scene1
   fadeAnimation: {fileID: 349728816}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 349728817}
   m_Layer: 0
-  m_Name: PlayerSpawn
+  m_Name: PlayerSpawnScene2Left
   m_TagString: PlayerSpawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

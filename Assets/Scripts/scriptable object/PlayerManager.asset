@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9754154d2c4ae1242baeccacc704a885, type: 3}
   m_Name: PlayerManager
   m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
-  playerPrefab: {fileID: 5735110732123489153, guid: 9c72ff883848eb643b7f2c76e9a743d2, type: 3}
+  playerPrefab: {fileID: 7109595167500287364, guid: 8e096acaaa1c28c48a437c143f70f2b4, type: 3}
   startingPlayerStats: {fileID: 11400000, guid: 5f348c8e368f31b419ca9c87ae885763, type: 2}
   spawnTag: PlayerSpawn

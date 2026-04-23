@@ -2,15 +2,21 @@ using UnityEngine;
 
 public class GameEventsManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+   public static GameEventsManager instance { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    public DialogueEvents dialogueEvents;
+    //public QuestEvents questEvents;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Debug.LogError("Found more than one Game Events Manager in the scene.");
+        }
+        instance = this;
+
+        //initialize all events
+        dialogueEvents = new DialogueEvents();
+        //questEvents = new QuestEvents();
     }
 }

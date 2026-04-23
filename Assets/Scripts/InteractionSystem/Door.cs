@@ -8,7 +8,18 @@ public class Door : MonoBehaviour, IInteractable
     public string InteractionPrompt => prompt;
     public bool Interact(Interactor interactor) //can be used to check the player's inventory
     {
-        Debug.Log("Opening Door");
-        return true;
+        var inventory = interactor.GetComponent<Inventory>();
+
+        if (inventory == null)
+            return false;
+
+        if (inventory.HasKey)
+        {
+            Debug.Log("Opening Door");
+            return true;
+        }
+
+        Debug.Log("No key found");
+        return false;
     }
 }

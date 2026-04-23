@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 4845719146571939526}
   - component: {fileID: 2545710047225318929}
   - component: {fileID: 7069207590502076626}
+  - component: {fileID: 525709916345989365}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -213,6 +214,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   numFound: 0
+--- !u!114 &525709916345989365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7109595167500287364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4579ec0841a9096468934a9a318403f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  HasKey: 0
 --- !u!1 &7631184882946769811
 GameObject:
   m_ObjectHideFlags: 0

@@ -365,8 +365,8 @@ Transform:
   m_GameObject: {fileID: 263396925}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.7, y: 0.58, z: -16.57405}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -8.91, y: 0.58, z: -16.57405}
+  m_LocalScale: {x: 0.73725, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1189468020}
@@ -568,6 +568,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74fd44aaa3ccd0a42b8531ad1c2ae4b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyCollectible
+  prompt: You found a key!
+  key: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
 --- !u!1 &529764630
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +584,7 @@ GameObject:
   - component: {fileID: 529764632}
   - component: {fileID: 529764631}
   m_Layer: 6
-  m_Name: Cube (3)
+  m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -600,7 +602,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379aa8f4bcd6e5e4983ff9fdbd3f7ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  prompt: Open door
+  isLocked: 1
+  requiredKey: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
+  doorAnimator: {fileID: 0}
+  levelTransition: {fileID: 0}
+  lockedPrompt: The door is locked.
+  unlockedPrompt: Use Key?
+  openPrompt: Opening door.
 --- !u!65 &529764632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -688,8 +696,8 @@ Transform:
   m_GameObject: {fileID: 529764630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.57, y: 1.1, z: -11.76865}
-  m_LocalScale: {x: 1, y: 2.0923, z: 1}
+  m_LocalPosition: {x: -2.57, y: 1.1, z: -11.245}
+  m_LocalScale: {x: 1, y: 2.0923, z: 0.20618}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1031,6 +1039,78 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &947280411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 947280414}
+  - component: {fileID: 947280413}
+  - component: {fileID: 947280412}
+  m_Layer: 0
+  m_Name: LockedDoorTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &947280412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947280411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c7ba7ebe2bd708468f5958e2ecb7aa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
+  triggererTag: Player
+  playerSpawnTransformName: LockedDoorScene3
+  enterSpeed: 1
+  sceneToLoad: Scene2
+  fadeAnimation: {fileID: 1279636020}
+--- !u!65 &947280413
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947280411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.12, y: 1, z: 0.82}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &947280414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 947280411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.46, y: 0.58, z: -10.868}
+  m_LocalScale: {x: 0.73725, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1279636021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995256342
@@ -1440,7 +1520,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379aa8f4bcd6e5e4983ff9fdbd3f7ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  prompt: 
+  isLocked: 0
+  requiredKey: {fileID: 0}
+  doorAnimator: {fileID: 0}
+  levelTransition: {fileID: 0}
+  lockedPrompt: The door is locked.
+  unlockedPrompt: Use Key?
+  openPrompt: Opening door.
 --- !u!1 &1094789019
 GameObject:
   m_ObjectHideFlags: 0
@@ -1502,6 +1588,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 263396927}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1279636020
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279636021}
+  m_Layer: 0
+  m_Name: LockedDoorScene1Spawn
+  m_TagString: PlayerSpawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279636021
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279636020}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.46, y: 0.42000002, z: -1.232}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 947280414}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1414443028
 GameObject:
@@ -1854,7 +1971,7 @@ Transform:
   m_GameObject: {fileID: 1802335291}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.48, y: 0.53, z: -11.76865}
+  m_LocalPosition: {x: -1.48, y: 0.53, z: -10.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2083,6 +2200,7 @@ SceneRoots:
   - {fileID: 995256346}
   - {fileID: 1802335295}
   - {fileID: 529764635}
+  - {fileID: 947280414}
   - {fileID: 850082313}
   - {fileID: 442637153}
   - {fileID: 1419852525}

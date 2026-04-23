@@ -25,12 +25,12 @@ public class KeyInventory : MonoBehaviour
         if (!keyIds.Contains(key.id))
         {
             keyIds.Add(key.id); //will add key to list if want to collect it
-            Debug.Log($"Key added: {key.keyName} (ID: {key.id}");
+            Debug.Log($"Key added: {key.keyName} (ID: {key.id})");
             //update UI
         }
     }
 
-    public bool HasKey(Key key)
+    public bool HasKey(Key key) //will pass in the scriptable object which checks if theres a key
     {
         return keyIds.Contains(key.id);
     }

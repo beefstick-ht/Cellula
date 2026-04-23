@@ -6,21 +6,21 @@ public class KeyCollectible : MonoBehaviour, IInteractable
     [SerializeField] private Key key;
 
     public string InteractionPrompt => prompt;
-    public bool Interact(Interactor interactor) //can be used to check the player's inventory
+    public bool Interact(Interactor interactor)
     {
-        var KeyInventory = interactor.GetComponent<Inventory>();
-
-        if (KeyInventory == null)
-            return false;
-
         if (key == null)
             return false;
-        {
-            KeyInventory.Instance.AddKey(key);
 
-            gameObject.SetActive(false);
-        }
+        KeyInventory inventory = KeyInventory.Instance; //refrencing keyinventory singleton, any script can then access it
+
+        //finds the KeyInventory that exists, if it doesnt exist, will stop, if exists, will call AddKey
+
+        if (inventory == null)
+            return false;
+
+        inventory.AddKey(key);
+        gameObject.SetActive(false); //makes the object appear like it was obtained
+        return true;
     }
-    
 
 }

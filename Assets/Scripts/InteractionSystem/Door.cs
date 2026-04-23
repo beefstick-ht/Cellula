@@ -13,7 +13,7 @@ public class Door : MonoBehaviour, IInteractable
         if (inventory == null)
             return false;
 
-        if (inventory.HasKey)
+        if (inventory.hasKey)
         {
             Debug.Log("Opening Door");
             return true;

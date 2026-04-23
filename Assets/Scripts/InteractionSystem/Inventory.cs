@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
-    public bool HasKey = false;
-    void Update()
+    public float[] inventory;
+   public float HoldingItem()
     {
-        if (Keyboard.current.qKey.wasPressedThisFrame) HasKey = !HasKey;
+        if (Key.hasKey = true)
+        {
+            inventory = new float[1];
+        }
     }
 }

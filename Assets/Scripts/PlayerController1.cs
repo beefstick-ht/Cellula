@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.XR;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public float sprintMultiplier;
     public float rotateSpeed;
 
     public float gravity = 9.8f; //player gravity
@@ -39,6 +40,11 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(transform.forward * move);
 
+    }
+
+    public void Sprint()
+    {
+        if (CharacterController.Move && )
     }
 
     private void CheckIsGrounded()

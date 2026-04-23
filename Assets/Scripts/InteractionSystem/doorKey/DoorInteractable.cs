@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInteractable
+public class DoorInteractable : MonoBehaviour, IInteractable
 {
    
     [SerializeField] private string prompt;
@@ -8,12 +8,12 @@ public class Door : MonoBehaviour, IInteractable
     public string InteractionPrompt => prompt;
     public bool Interact(Interactor interactor) //can be used to check the player's inventory
     {
-        var inventory = interactor.GetComponent<Inventory>();
+        var KeyInventory = interactor.GetComponent<Inventory>();
 
-        if (inventory == null)
+        if (KeyInventory == null)
             return false;
 
-        if (inventory.hasKey)
+      //  if (inventory.hasKey)
         {
             Debug.Log("Opening Door");
             return true;

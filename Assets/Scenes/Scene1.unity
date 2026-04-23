@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f6c7e94a033c94c9b747ab32aae6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
-  player: {fileID: 7971715016122560264, guid: 8e096acaaa1c28c48a437c143f70f2b4, type: 3}
+  player: {fileID: 4916300987134205, guid: eb6294d02ce48a042b0a3ffa62d9330a, type: 3}
   activeCam: {fileID: 86099641}
 --- !u!65 &47920233
 BoxCollider:
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379aa8f4bcd6e5e4983ff9fdbd3f7ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
-  prompt: 
+  prompt: Open door
 --- !u!65 &529764632
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f6c7e94a033c94c9b747ab32aae6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
-  player: {fileID: 7971715016122560264, guid: 8e096acaaa1c28c48a437c143f70f2b4, type: 3}
+  player: {fileID: 4916300987134205, guid: eb6294d02ce48a042b0a3ffa62d9330a, type: 3}
   activeCam: {fileID: 106702139}
 --- !u!65 &555836818
 BoxCollider:
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225ef0bc793582d4ea0ed8fc82ee60e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chest
-  prompt: 
+  prompt: Store items
 --- !u!1 &1862580883
 GameObject:
   m_ObjectHideFlags: 0

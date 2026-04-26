@@ -71,7 +71,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     {
         isOpen = true;
         doorAnimator?.SetTrigger("Open");
-
+        DoorEvents.onDoorOpened?.Invoke(doorID);
         if (levelTransition != null)
             levelTransition.enabled = true;
     }

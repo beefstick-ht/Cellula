@@ -19,6 +19,7 @@ public class KeyCollectible : MonoBehaviour, IInteractable
             return false;
 
         inventory.AddKey(key);
+        KeyEvents.onKeyCollected?.Invoke(key);
         gameObject.SetActive(false); //makes the object appear like it was obtained
         return true;
     }

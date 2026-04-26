@@ -42,6 +42,8 @@ public class LevelTransition : MonoBehaviour
     {
         if(collider.gameObject.tag == triggererTag)
         {
+
+
             IDamageable playerDamageable = collider.gameObject.GetComponent<IDamageable>();
 
             if(playerDamageable != null)
@@ -53,15 +55,25 @@ public class LevelTransition : MonoBehaviour
             //player cannot move
             PlayerController playerController = collider.gameObject.GetComponent<PlayerController>();
             playerController.enabled = false;
+            // spawn the fade canvas
+            GameObject fadeObject = Instantiate(fadeAnimation);
+            FadeController fader = fadeObject.GetComponent<FadeController>();
+
 
             //player will walk towards the entrance direction
             Vector2 entranceDirection = (transform.position - playerController.transform.position).normalized;
 
-            // playerController.linearVelocity = entranceDirection * enterSpeed;
+            if (fader == null)
+            {
+                Debug.LogError("FadeController component not found on fadeAnimation prefab - make sure it is attached");
+                return;
+            }
 
-            // transitionAnimator = Instantiate(fadeAnimation, canvas.transform).GetComponent<Animator>();
-
-            LevelEvents.levelExit?.Invoke(sceneToLoad, playerSpawnTransformName);
+            fader.FadeIn(() =>
+            {
+                Debug.Log("Fade complete, loading scene: " + sceneToLoad);
+                LevelEvents.levelExit?.Invoke(sceneToLoad, playerSpawnTransformName);
+            });
         }
     }
 }

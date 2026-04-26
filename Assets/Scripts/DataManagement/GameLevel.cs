@@ -9,6 +9,18 @@ public class GameLevel : MonoBehaviour
     //start the game level
     private void Start()
     {
-        LevelEvents.levelLoaded.Invoke(defaultPlayerSpawn);
+        // find the fade canvas if it persisted
+        FadeController fader = FindFirstObjectByType<FadeController>();
+
+        if (fader != null)
+        {
+            // fade out from black when new scene loads
+            fader.FadeOut(() =>
+            {
+                Destroy(fader.gameObject);
+            });
+        }
+
+        LevelEvents.levelLoaded?.Invoke(defaultPlayerSpawn);
     }
 }

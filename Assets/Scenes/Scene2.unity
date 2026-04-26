@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f6c7e94a033c94c9b747ab32aae6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
-  player: {fileID: 5264413205970312300, guid: 6846925fdfeceae4f9ef3c793d4248ed, type: 3}
+  player: {fileID: 4916300987134205, guid: eb6294d02ce48a042b0a3ffa62d9330a, type: 3}
   activeCam: {fileID: 2002557140}
 --- !u!65 &11333667
 BoxCollider:
@@ -222,7 +222,7 @@ MonoBehaviour:
   playerSpawnTransformName: PlayerSpawnScene1Left
   enterSpeed: 1
   sceneToLoad: Scene1
-  fadeAnimation: {fileID: 349728816}
+  fadeAnimation: {fileID: 2819598310693532818, guid: 657d6bac3de584544af1c58f0c04391c, type: 3}
 --- !u!65 &254436872
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -294,7 +294,7 @@ MonoBehaviour:
   playerSpawnTransformName: PlayerSpawnScene1Right
   enterSpeed: 1
   sceneToLoad: Scene1
-  fadeAnimation: {fileID: 1415248402}
+  fadeAnimation: {fileID: 2819598310693532818, guid: 657d6bac3de584544af1c58f0c04391c, type: 3}
 --- !u!65 &310817407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -563,7 +563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0f6c7e94a033c94c9b747ab32aae6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
-  player: {fileID: 5264413205970312300, guid: 6846925fdfeceae4f9ef3c793d4248ed, type: 3}
+  player: {fileID: 4916300987134205, guid: eb6294d02ce48a042b0a3ffa62d9330a, type: 3}
   activeCam: {fileID: 981845210}
 --- !u!65 &793445981
 BoxCollider:

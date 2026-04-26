@@ -14,6 +14,7 @@ public class LevelManager : ScriptableObject
 
     private void OnLevelExit(string nextLevelName, string spawnName)
     {
+        Debug.Log("LevelManager received exit event, loading: " + nextLevelName);
         GameState.playerSpawnLocation = spawnName;
         SceneManager.LoadScene(nextLevelName, LoadSceneMode.Single);
     }

@@ -78,11 +78,26 @@ public class QuestManager : MonoBehaviour
     }
     private void AdvanceQuest(string id)
     {
-        Debug.Log("Advance Quest: " + id);
+        Quest quest = GetQuestById(id);
+
+        //move onto the next step
+        quest.MoveToNextStep();
+
+        //if there are more steps, instantiate the next one
+        if(quest.CurrentStepExists())
+        {
+            quest.InstantiateCurrentQuestStep(this.transform);
+        }
+        else //if there are no more steps
+        {
+            ChangeQuestState(quest.info.id, QuestState.CAN_FINISH);
+        }
     }
     private void FinishQuest(string id)
     {
-        Debug.Log("Finish Quest: " + id);
+        Quest quest = GetQuestById(id);
+
+        ChangeQuestState(quest.info.id, QuestState.FINISHED);
     }
     private Dictionary<string, Quest> CreateQuestMap()
     {

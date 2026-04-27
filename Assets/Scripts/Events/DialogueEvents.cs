@@ -2,60 +2,56 @@ using Ink.Runtime;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-public class DialogueEvents 
+
+public class DialogueEvents
 {
     public event Action<int> onChoiceIndexUpdated;
-    public event Action<string> onEnterDialogue;
 
+    public event Action<string> onEnterDialogue;
+    public event Action<int> onSelectionChanged;
+
+    public void SelectionChanged(int index)
+    {
+        onSelectionChanged?.Invoke(index);
+    }
 
     public void EnterDialogue(string knotName)
     {
-        if (onEnterDialogue != null)
-        {
-            onEnterDialogue(knotName);
-        }
+        onEnterDialogue?.Invoke(knotName);
     }
 
     public event Action onDialogueStarted;
     public void DialogueStarted()
     {
-        if (onDialogueStarted != null)
-        {
-            onDialogueStarted();
-        }
+        onDialogueStarted?.Invoke();
     }
 
     public event Action onDialogueFinished;
     public void DialogueFinished()
     {
-        if (onDialogueFinished != null)
-        {
-            onDialogueFinished();
-        }
+        onDialogueFinished?.Invoke();
     }
 
     public event Action<string, List<Choice>> onDisplayDialogue;
     public void DisplayDialogue(string dialogueLine, List<Choice> dialogueChoices)
     {
-        if (onDisplayDialogue != null)
+        onDisplayDialogue?.Invoke(dialogueLine, dialogueChoices);
+    }
+
+    public void UpdateChoiceIndex(int choiceIndex)
+    {
+        if (onChoiceIndexUpdated != null)
         {
-            onDisplayDialogue(dialogueLine, dialogueChoices);
+            onChoiceIndexUpdated(choiceIndex);
         }
     }
 
-    public event Action<int> onUpdateChoiceIndex;
-    public void UpdateChoiceIndex(int choiceIndex)
-    {
-        if (onUpdateChoiceIndex != null)
-        {
-            onUpdateChoiceIndex(choiceIndex);
-        }
-    }
     public event Action onSubmitPressed;
     public void SubmitPressed()
     {
         onSubmitPressed?.Invoke();
     }
+
     public event Action<int> onNavigateChoice;
     public void NavigateChoice(int direction)
     {

@@ -1,24 +1,18 @@
-//-> QuestionQueer
-//-> npcQuest
-VAR questCompleted = true
-
-// ~ questCompleted = false, variable modification during dialogue
 === QuestionQueer ===
-I want to tell you something
+I want to tell you something.
 * [Okay.]
     You're gay.
-  
-+ [What is it?]
+    -> END
+* [What is it?]
     I'm gay.
- - -> END
--> QuestionQueer
+    -> END
 
 === npcQuest ===
-{questCompleted:
+{ questCompleted:
     Wow, I didn't know you were a girl kisser...
     Maybe you can find a gun to help me?
-  - else:
+- else:
     Why are you talking to me?
 }
--> DONE
-
+-> END
+VAR questCompleted =  true

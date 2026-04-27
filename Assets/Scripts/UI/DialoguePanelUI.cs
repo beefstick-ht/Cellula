@@ -22,6 +22,7 @@ public class DialoguePanelUI : MonoBehaviour
         GameEventsManager.instance.dialogueEvents.onDialogueStarted += DialogueStarted;
         GameEventsManager.instance.dialogueEvents.onDialogueFinished += DialogueFinished;
         GameEventsManager.instance.dialogueEvents.onDisplayDialogue += DisplayDialogue;
+        GameEventsManager.instance.dialogueEvents.onSelectionChanged += UpdateVisualSelection;
     }
 
     private void OnDestroy()
@@ -42,49 +43,52 @@ public class DialoguePanelUI : MonoBehaviour
 
         //reset anything for next time
         ResetPanel();
-    }    
+    }
 
     private void DisplayDialogue(string dialogueLine, List<Choice> dialogueChoices)
     {
         dialogueText.text = dialogueLine;
 
-        //defensive check - if there are more choices coming in than we can support, log an error
-        if(dialogueChoices.Count > choiceButtons.Length)
-        {
-            Debug.LogError("More dialogue choices ("
-                + dialogueChoices.Count + ") came through than are supported ("
-                + choiceButtons.Length + ").");
-        }
-
-        //start with all of the choice buttons hidden
+        //  Hide all buttons first
         foreach (DialogueChoiceButton choiceButton in choiceButtons)
         {
             choiceButton.gameObject.SetActive(false);
         }
 
-        //enable and set info for buttons depending on ink choice information
-        int choiceButtonIndex = dialogueChoices.Count - 1;
-        for (int inkChoiceIndex = 0; inkChoiceIndex < dialogueChoices.Count; inkChoiceIndex++)
+        // Fill buttons 1-to-1 (Top button = First choice)
+        for (int i = 0; i < dialogueChoices.Count; i++)
         {
-            Choice dialogueChoice = dialogueChoices[inkChoiceIndex];
-            DialogueChoiceButton choiceButton = choiceButtons[choiceButtonIndex];
+            if (i >= choiceButtons.Length) break;
 
-            choiceButton.gameObject.SetActive(true);
-            choiceButton.SetChoiceText(dialogueChoice.text);
-            choiceButton.SetChoiceIndex(inkChoiceIndex);
+            choiceButtons[i].gameObject.SetActive(true);
+            choiceButtons[i].SetChoiceText(dialogueChoices[i].text);
 
-            if (inkChoiceIndex == 0)
+            choiceButtons[i].SetChoiceIndex(dialogueChoices[i].index);
+
+            // Auto-select the first one if we just started showing choices
+            if (i == 0)
             {
-                choiceButton.SelectButton();
-                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(0);
+                choiceButtons[i].SelectButton();
+                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(dialogueChoices[i].index);
             }
-
-            choiceButtonIndex--;
         }
     }
 
     private void ResetPanel()
     {
         dialogueText.text = "";
+    }
+
+    public event Action<int> onSelectionChanged;
+    public void SelectionChanged(int index)
+    {
+        onSelectionChanged?.Invoke(index);
+    }
+    private void UpdateVisualSelection(int index)
+    {
+        if (index >= 0 && index < choiceButtons.Length)
+        {
+            choiceButtons[index].SelectButton();
+        }
     }
 }

@@ -55,11 +55,12 @@ public class DialogueManager : MonoBehaviour
     private void OnChoiceIndexUpdated(int index)
     {
         currentChoiceIndex = index;
+        Debug.Log("Manager updated: currentChoiceIndex is now " + index);
     }
-
 
     private void MakeChoice(int choiceIndex)
     {
+        Debug.Log("INK ACTION: Choosing index " + choiceIndex);
         story.ChooseChoiceIndex(choiceIndex);
         currentChoices.Clear();
         ContinueOrExitStory();
@@ -68,7 +69,7 @@ public class DialogueManager : MonoBehaviour
     private void EnterDialogue(string knotName)
     {
         if (dialoguePlaying) //dont enter dialogue if alr have
-            {
+        {
             return;
         }
 
@@ -79,7 +80,7 @@ public class DialogueManager : MonoBehaviour
 
         //freeze player movements
         //GameEventsManager.instance.playerEvents.DisablePlayerMovement();
-        
+
         //jump to the knot
         if (!knotName.Equals(""))
         {
@@ -100,12 +101,24 @@ public class DialogueManager : MonoBehaviour
         {
             string dialogueLine = story.Continue();
             currentChoices = story.currentChoices;
+            Debug.Log("Dialogue line: " + dialogueLine);
+            foreach (Choice choice in currentChoices)
+            {
+                Debug.Log("Choice " + choice.index + ": " + choice.text);
+            }
+
             GameEventsManager.instance.dialogueEvents
                 .DisplayDialogue(dialogueLine, currentChoices);
         }
         else if (story.currentChoices.Count > 0)
         {
             currentChoices = story.currentChoices;
+
+            foreach (Choice choice in currentChoices)
+            {
+                Debug.Log("Choice " + choice.index + ": " + choice.text);
+            }
+
             GameEventsManager.instance.dialogueEvents
                 .DisplayDialogue("", currentChoices);
         }
@@ -124,7 +137,7 @@ public class DialogueManager : MonoBehaviour
         GameEventsManager.instance.dialogueEvents.DialogueFinished();
 
         //let player move again
-      //  GameEventsManager.instance.playerEvents.EnablePlayerMovement();
+        //  GameEventsManager.instance.playerEvents.EnablePlayerMovement();
 
         //reset story state
         story.ResetState();
@@ -140,6 +153,11 @@ public class DialogueManager : MonoBehaviour
         if (currentChoices.Count == 0) return;
 
         int newIndex = Mathf.Clamp(currentChoiceIndex + direction, 0, currentChoices.Count - 1);
+
+        // Tell the system the index updated
         GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(newIndex);
+
+        // Tell the UI to visually move the selection
+        GameEventsManager.instance.dialogueEvents.SelectionChanged(newIndex);
     }
 }

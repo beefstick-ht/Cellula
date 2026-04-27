@@ -57,37 +57,6 @@ public class DialogueManager : MonoBehaviour
         currentChoiceIndex = index;
     }
 
-    private void Update()
-    {
-        if (!dialoguePlaying)
-            return;
-
-        // if there are choices, navigate with arrow keys
-        if (currentChoices.Count > 0)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                int newIndex = Mathf.Max(0, currentChoiceIndex - 1);
-                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(newIndex);
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                int newIndex = Mathf.Min(currentChoices.Count - 1, currentChoiceIndex + 1);
-                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(newIndex);
-            }
-            // confirm choice with E
-            else if (Input.GetKeyDown(KeyCode.E))
-            {
-                MakeChoice(currentChoiceIndex);
-            }
-        }
-        else
-        {
-            // no choices, just continue with E
-            if (Input.GetKeyDown(KeyCode.E))
-                ContinueOrExitStory();
-        }
-    }
 
     private void MakeChoice(int choiceIndex)
     {

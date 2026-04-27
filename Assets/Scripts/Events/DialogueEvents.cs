@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class DialogueEvents 
 {
-
+    public event Action<int> onChoiceIndexUpdated;
     public event Action<string> onEnterDialogue;
+
 
     public void EnterDialogue(string knotName)
     {
@@ -49,5 +50,15 @@ public class DialogueEvents
         {
             onUpdateChoiceIndex(choiceIndex);
         }
+    }
+    public event Action onSubmitPressed;
+    public void SubmitPressed()
+    {
+        onSubmitPressed?.Invoke();
+    }
+    public event Action<int> onNavigateChoice;
+    public void NavigateChoice(int direction)
+    {
+        onNavigateChoice?.Invoke(direction);
     }
 }

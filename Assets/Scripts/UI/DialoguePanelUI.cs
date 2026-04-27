@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using Ink.Runtime;
+using System.Collections.Generic;
 using System;
 
 public class DialoguePanelUI : MonoBehaviour

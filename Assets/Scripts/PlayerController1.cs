@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     private bool isGrounded;
+    public bool canMove = true;
     private Vector3 velocity;
     private Transform feet;
 
@@ -26,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) return;
+
         Move();
         CheckIsGrounded();
         ApplyGravity();

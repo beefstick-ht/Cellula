@@ -6,52 +6,93 @@ using System;
 public class DialogueManager : MonoBehaviour
 {
     private bool dialoguePlaying = false;
+    private int currentChoiceIndex = 0;
+    private List<Choice> currentChoices = new List<Choice>();
 
     [Header("Ink Story")]
-
     [SerializeField] private TextAsset inkJson;
 
     private Story story;
 
-    private int currentChoiceIndex = -1;
 
     private void Awake()
     {
         story = new Story(inkJson.text);
     }
 
-    private void Start() 
+    private void Start()
     {
-        if (GameEventsManager.instance == null)
-        {
-            Debug.LogError("GameEventsManager not found - make sure it exists in the scene");
-            return;
-        }
         GameEventsManager.instance.dialogueEvents.onEnterDialogue += EnterDialogue;
-        GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex += UpdateChoiceIndex;
+        GameEventsManager.instance.dialogueEvents.onChoiceIndexUpdated += OnChoiceIndexUpdated;
+        GameEventsManager.instance.dialogueEvents.onSubmitPressed += OnSubmitPressed;
+        GameEventsManager.instance.dialogueEvents.onNavigateChoice += OnNavigateChoice;
     }
-
-    private void OnDestroy()  
+    private void OnDestroy()
     {
         if (GameEventsManager.instance != null)
         {
             GameEventsManager.instance.dialogueEvents.onEnterDialogue -= EnterDialogue;
-            GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex -= UpdateChoiceIndex;
+            GameEventsManager.instance.dialogueEvents.onChoiceIndexUpdated -= OnChoiceIndexUpdated;
+            GameEventsManager.instance.dialogueEvents.onSubmitPressed -= OnSubmitPressed;
+            GameEventsManager.instance.dialogueEvents.onNavigateChoice -= OnNavigateChoice;
         }
     }
-
-    private void UpdateChoiceIndex(int choiceIndex)
+    private void OnSubmitPressed()
     {
-        this.currentChoiceIndex = choiceIndex;
-    }
-
-    private void SubmitPressed()
-    {
-        //if dialogue isnt playing, we never want to register input here
         if (!dialoguePlaying)
-        {
             return;
+
+        if (currentChoices.Count > 0)
+        {
+            MakeChoice(currentChoiceIndex); // confirm selected choice
         }
+        else
+        {
+            ContinueOrExitStory(); // no choices, just continue
+        }
+    }
+
+    private void OnChoiceIndexUpdated(int index)
+    {
+        currentChoiceIndex = index;
+    }
+
+    private void Update()
+    {
+        if (!dialoguePlaying)
+            return;
+
+        // if there are choices, navigate with arrow keys
+        if (currentChoices.Count > 0)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                int newIndex = Mathf.Max(0, currentChoiceIndex - 1);
+                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(newIndex);
+            }
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                int newIndex = Mathf.Min(currentChoices.Count - 1, currentChoiceIndex + 1);
+                GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(newIndex);
+            }
+            // confirm choice with E
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                MakeChoice(currentChoiceIndex);
+            }
+        }
+        else
+        {
+            // no choices, just continue with E
+            if (Input.GetKeyDown(KeyCode.E))
+                ContinueOrExitStory();
+        }
+    }
+
+    private void MakeChoice(int choiceIndex)
+    {
+        story.ChooseChoiceIndex(choiceIndex);
+        currentChoices.Clear();
         ContinueOrExitStory();
     }
 
@@ -86,28 +127,30 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueOrExitStory()
     {
-        //make a choice, if applicable
-        if(story.currentChoices.Count > 0 && currentChoiceIndex != -1)
-        {
-            story.ChooseChoiceIndex(currentChoiceIndex);
-            //reset choice index for next time
-            currentChoiceIndex = -1;
-        }
         if (story.canContinue)
         {
             string dialogueLine = story.Continue();
-            GameEventsManager.instance.dialogueEvents.DisplayDialogue(dialogueLine, story.currentChoices);
+            currentChoices = story.currentChoices;
+            GameEventsManager.instance.dialogueEvents
+                .DisplayDialogue(dialogueLine, currentChoices);
         }
-        else if (story.currentChoices.Count == 0) //if there are no more paths, exit dialogue
+        else if (story.currentChoices.Count > 0)
+        {
+            currentChoices = story.currentChoices;
+            GameEventsManager.instance.dialogueEvents
+                .DisplayDialogue("", currentChoices);
+        }
+        else
         {
             ExitDialogue();
         }
     }
 
+
     private void ExitDialogue()
     {
         dialoguePlaying = false;
-
+        currentChoices.Clear();
         //inform other parts of our system we stopped dialogue
         GameEventsManager.instance.dialogueEvents.DialogueFinished();
 
@@ -116,5 +159,18 @@ public class DialogueManager : MonoBehaviour
 
         //reset story state
         story.ResetState();
+    }
+
+    private bool IsLineBlank(string dialogueLine)
+    {
+        return dialogueLine.Trim().Equals("") || dialogueLine.Trim().Equals("\n");
+    }
+
+    private void OnNavigateChoice(int direction)
+    {
+        if (currentChoices.Count == 0) return;
+
+        int newIndex = Mathf.Clamp(currentChoiceIndex + direction, 0, currentChoices.Count - 1);
+        GameEventsManager.instance.dialogueEvents.UpdateChoiceIndex(newIndex);
     }
 }

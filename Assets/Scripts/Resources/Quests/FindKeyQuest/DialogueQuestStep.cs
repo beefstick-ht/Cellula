@@ -12,6 +12,7 @@ public class DialogueQuestStep : QuestStep
 
     private void OnDisable()
     {
+
         // uncomment when dialogue system is built:
         // DialogueEvents.onDialogueFinished -= OnDialogueFinished;
     }

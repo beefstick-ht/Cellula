@@ -14,7 +14,10 @@ public class QuestGiver : MonoBehaviour, IInteractable
 
     private void OnDisable()
     {
-        GameEventsManager.instance.questEvents.onQuestStateChange -= OnQuestStateChange;
+        if (GameEventsManager.instance != null)
+        {
+            GameEventsManager.instance.questEvents.onQuestStateChange -= OnQuestStateChange;
+        }
     }
 
     private void OnQuestStateChange(Quest quest)

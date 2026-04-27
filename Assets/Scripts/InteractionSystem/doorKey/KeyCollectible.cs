@@ -6,6 +6,15 @@ public class KeyCollectible : MonoBehaviour, IInteractable
     [SerializeField] private Key key;
 
     public string InteractionPrompt => prompt;
+    private void Start()
+    {
+        // if player already has this key, hide the pickup
+        if (KeyInventory.Instance != null && KeyInventory.Instance.HasKey(key))
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
     public bool Interact(Interactor interactor)
     {
         if (key == null)

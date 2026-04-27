@@ -15,6 +15,7 @@ public class QuestManager : MonoBehaviour
         GameEventsManager.instance.questEvents.onStartQuest += StartQuest;
         GameEventsManager.instance.questEvents.onAdvanceQuest += AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest += FinishQuest;
+        GameEventsManager.instance.questEvents.onGetQuest += GetQuestById;
     }
 
     public void OnDisable()
@@ -22,6 +23,7 @@ public class QuestManager : MonoBehaviour
         GameEventsManager.instance.questEvents.onStartQuest -= StartQuest;
         GameEventsManager.instance.questEvents.onAdvanceQuest -= AdvanceQuest;
         GameEventsManager.instance.questEvents.onFinishQuest -= FinishQuest;
+        GameEventsManager.instance.questEvents.onGetQuest -= GetQuestById;
     }
 
     private void Start()
@@ -33,10 +35,10 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private void ChangeQuestState(string id, QuestState quest)
+    private void ChangeQuestState(string id, QuestState newState)
     {
         Quest quest = GetQuestById(id);
-        quest.state = state;
+        quest.state = newState;
         GameEventsManager.instance.questEvents.QuestStateChange(quest);
     }
     
@@ -57,16 +59,21 @@ public class QuestManager : MonoBehaviour
     }
 
     private void Update()
+    { //loop through all the quests
+       foreach (Quest quest in questMap.Values)
     {
-        //loop through all quests
-        foreach (Quest quest in questMap.Values)
+        if (quest.state == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
         {
-            //if were not meeting the requirements, switch over to CAN_START state
-            if(quest.state == QuestState.REQUIREMENTS_NOT_MET && CheckRequirementsMet(quest))
+            ChangeQuestState(quest.info.id, QuestState.CAN_START);
+
+            // directive quests start automatically
+            // npc quests wait for the player to talk to the npc
+            if (quest.info.questType == QuestType.DIRECTIVE)
             {
-                ChangeQuestState(quest.info.id, QuestState.CAN_START);
+                GameEventsManager.instance.questEvents.StartQuest(quest.info.id);
             }
         }
+    }
     }
 
     private void StartQuest(string id)

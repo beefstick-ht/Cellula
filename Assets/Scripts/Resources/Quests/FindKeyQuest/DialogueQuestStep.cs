@@ -1,17 +1,19 @@
 using UnityEngine;
 
-public class DialogueQuestStep : MonoBehaviour
+public class DialogueQuestStep : QuestStep
 {
     [SerializeField] private string npcID;
 
     private void OnEnable()
     {
-        DialogueEvents.onDialogueFinished += OnDialogueFinished;
+        // uncomment when dialogue system is built:
+        // DialogueEvents.onDialogueFinished += OnDialogueFinished;
     }
 
     private void OnDisable()
     {
-        DialogueEvents.onDialogueFinished -= OnDialogueFinished;
+        // uncomment when dialogue system is built:
+        // DialogueEvents.onDialogueFinished -= OnDialogueFinished;
     }
 
     private void OnDialogueFinished(string finishedNpcID)

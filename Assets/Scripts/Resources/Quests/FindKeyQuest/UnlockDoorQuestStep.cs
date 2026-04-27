@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class UnlockDoorQuestStep : MonoBehaviour
+public class UnlockDoorQuestStep : QuestStep
 {
     [SerializeField] private string doorID;
 

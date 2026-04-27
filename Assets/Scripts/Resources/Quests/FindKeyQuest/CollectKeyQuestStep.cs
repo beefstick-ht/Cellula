@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CollectKeyQuestStep : QuestStep
 {
-    [SerializeField] private Key requiredKey;
+ [SerializeField] private Key requiredKey;
 
     private void OnEnable()
     {

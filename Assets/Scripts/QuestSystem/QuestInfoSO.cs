@@ -10,6 +10,13 @@ public class QuestInfoSO : ScriptableObject
 
     [Header("General")]
     public string displayName;
+    public QuestType questType;
+
+    [Header("NPC Quest Settings")]
+    // only used if questType == NPC_GIVEN
+    public string questGiverNpcID;  // which NPC gives this quest
+    public string acceptDialogueID; // dialogue to play when accepting
+    public string completeDialogueID; // dialogue to play when finishing
 
     [Header("Requirements")]
     public QuestInfoSO[] questPrerequisites;

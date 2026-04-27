@@ -8,3 +8,9 @@ public enum QuestState
   CAN_FINISH,
   FINISHED
 }
+
+public enum QuestType
+{
+    NPC_GIVEN, //requires npc
+    DIRECTIVE  //starts automatically based on game events
+}

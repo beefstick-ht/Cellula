@@ -19,4 +19,9 @@ public abstract class QuestStep : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+    protected void UpdateQuestStepState(string state)
+    {
+        Debug.Log("Quest step state: " + state);
+        // later you can hook this into UI or dialogue
+    }
 }

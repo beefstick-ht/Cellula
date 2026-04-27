@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using System;
-public class QuestEvents : MonoBehaviour
+public class QuestEvents
 {
     public event Action<string> onStartQuest;
 
@@ -33,10 +33,14 @@ public class QuestEvents : MonoBehaviour
     public event Action<Quest> onQuestStateChange;
     public void QuestStateChange(Quest quest)
     {
-        if(onQuestStateChange != null)
+        if (onQuestStateChange != null)
         {
             onQuestStateChange(quest);
         }
     }
+    public event Func<string, Quest> onGetQuest;
+    public Quest GetQuest(string id) => onGetQuest?.Invoke(id);
+    //anything can check quest state
+    
 }
 

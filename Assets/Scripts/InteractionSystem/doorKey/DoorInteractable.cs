@@ -6,6 +6,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     [SerializeField] private Key requiredKey;
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private LevelTransition levelTransition;
+    [SerializeField] private string doorID; // unique name for this door
 
     [Header("Prompts")]
     [SerializeField] private string lockedPrompt = "The door is locked.";

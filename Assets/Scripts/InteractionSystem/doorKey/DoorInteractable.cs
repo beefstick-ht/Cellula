@@ -22,13 +22,18 @@ public class DoorInteractable : MonoBehaviour, IInteractable
             if (isOpen)
                 return openPrompt;
 
-            if (KeyInventory.Instance != null && KeyInventory.Instance.HasKey(requiredKey))
-                return unlockedPrompt;
+            if (isLocked)
+            {
+                if (requiredKey == null)
+                    return lockedPrompt; // just show locked if no key assigned
 
-            if(isLocked)
+                if (KeyInventory.Instance != null && KeyInventory.Instance.HasKey(requiredKey))
+                    return unlockedPrompt;
+
                 return lockedPrompt;
+            }
 
-            return unlockedPrompt; //unlocked doors always show open prompt
+            return unlockedPrompt;
         }
     }
 

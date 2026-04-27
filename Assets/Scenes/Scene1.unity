@@ -338,6 +338,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 555836819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &249419624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249419626}
+  - component: {fileID: 249419625}
+  m_Layer: 0
+  m_Name: Inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &249419625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249419624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4579ec0841a9096468934a9a318403f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+--- !u!4 &249419626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249419624}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.16607, y: 2.92286, z: -13.28699}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263396925
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,6 +650,7 @@ MonoBehaviour:
   requiredKey: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
   doorAnimator: {fileID: 656234073}
   levelTransition: {fileID: 263396928}
+  doorID: 
   lockedPrompt: The door is locked.
   unlockedPrompt: Use Key?
   openPrompt: Opening door.
@@ -884,6 +929,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &654892520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654892521}
+  - component: {fileID: 654892522}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &654892521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654892520}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1978281028}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &654892522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654892520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c731cb8fb9ddf14f9a20413553a04da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  inkJson: {fileID: 4900000, guid: dac80cd4eb7a97a48b0ec1964865a9bf, type: 3}
 --- !u!1 &656234072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1748,7 @@ MonoBehaviour:
   requiredKey: {fileID: 0}
   doorAnimator: {fileID: 0}
   levelTransition: {fileID: 0}
+  doorID: 
   lockedPrompt: The door is locked.
   unlockedPrompt: Use Key?
   openPrompt: Opening door.
@@ -1721,6 +1812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3da544a942370bf428bc79aca65464af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectKeyQuestStep
+  requiredKey: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
 --- !u!4 &1127047968
 Transform:
   m_ObjectHideFlags: 0
@@ -2087,7 +2179,7 @@ GameObject:
   - component: {fileID: 1802335292}
   - component: {fileID: 1802335296}
   m_Layer: 6
-  m_Name: Cube (2)
+  m_Name: npc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2195,10 +2287,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1802335291}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 225ef0bc793582d4ea0ed8fc82ee60e6, type: 3}
+  m_Script: {fileID: 11500000, guid: ed4aa3ce82f391845beca8511f270364, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Chest
-  prompt: Store items
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueQuestStep
+  npcID: 1
 --- !u!1 &1862580883
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,6 +2301,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1862580886}
   - component: {fileID: 1862580884}
+  - component: {fileID: 1862580887}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2240,12 +2333,24 @@ Transform:
   m_GameObject: {fileID: 1862580883}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5063097, y: 0, z: -11.72408}
+  m_LocalPosition: {x: -4.65473, y: 0, z: -17.51194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1978281028}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1862580887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862580883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6280fc8f9916a44682a90f70e6cce80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameEventsManager
 --- !u!1 &1978281027
 GameObject:
   m_ObjectHideFlags: 0
@@ -2276,10 +2381,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 721410065}
-  - {fileID: 1862580886}
   - {fileID: 1419852525}
   - {fileID: 870233368}
   - {fileID: 1528545815}
+  - {fileID: 654892521}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1995794998
@@ -2446,5 +2551,7 @@ SceneRoots:
   - {fileID: 947280414}
   - {fileID: 850082313}
   - {fileID: 442637153}
+  - {fileID: 1862580886}
   - {fileID: 1978281028}
   - {fileID: 1127047968}
+  - {fileID: 249419626}

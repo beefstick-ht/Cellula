@@ -5,6 +5,11 @@ public class QuestGiver : MonoBehaviour, IInteractable
     [SerializeField] private QuestInfoSO quest;
     [SerializeField] private string prompt = "Talk";
 
+    [Header("Dialogue Knots")]
+    [SerializeField] private string startKnot;        // before quest starts
+    [SerializeField] private string inProgressKnot;   // while quest is active
+    [SerializeField] private string finishKnot;     // when quest can finish
+
     public string InteractionPrompt => prompt;
 
     private void OnEnable()
@@ -36,6 +41,9 @@ public class QuestGiver : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
+        if (GameEventsManager.instance == null)
+            return false;
+
         // get current quest state
         Quest currentQuest = GameEventsManager.instance
             .questEvents.GetQuest(quest.id);
@@ -45,31 +53,22 @@ public class QuestGiver : MonoBehaviour, IInteractable
         if (currentQuest.state == QuestState.CAN_START)
         {
             // start the quest and play accept dialogue
+            GameEventsManager.instance.dialogueEvents.EnterDialogue(startKnot);
             GameEventsManager.instance.questEvents.StartQuest(quest.id);
-            // trigger dialogue when you build it:
-            // GameEventsManager.instance.dialogueEvents
-            //     .StartDialogue(quest.acceptDialogueID);
-            return true;
         }
 
         if (currentQuest.state == QuestState.CAN_FINISH)
         {
             // finish the quest and play complete dialogue
+            GameEventsManager.instance.dialogueEvents.EnterDialogue(finishKnot);
             GameEventsManager.instance.questEvents.FinishQuest(quest.id);
-            // trigger dialogue when you build it:
-            // GameEventsManager.instance.dialogueEvents
-            //     .StartDialogue(quest.completeDialogueID);
-            return true;
         }
 
         if (currentQuest.state == QuestState.IN_PROGRESS)
         {
-            // play in progress dialogue when you build it
-            // GameEventsManager.instance.dialogueEvents
-            //     .StartDialogue(quest.inProgressDialogueID);
-            return true;
+            GameEventsManager.instance.dialogueEvents.EnterDialogue(inProgressKnot);
         }
 
-        return false;
+        return true;
     }
 }

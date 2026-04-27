@@ -7,9 +7,10 @@ VAR questCompleted = true
 I want to tell you something
 * [Okay.]
     You're gay.
-    -> END
+  
 + [What is it?]
     I'm gay.
+ - -> END
 -> QuestionQueer
 
 === npcQuest ===

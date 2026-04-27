@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
 
     private Story story;
 
-  
+    private int currentChoiceIndex = -1;
 
     private void Awake()
     {
@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         GameEventsManager.instance.dialogueEvents.onEnterDialogue += EnterDialogue;
+        GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex += UpdateChoiceIndex;
     }
 
     private void OnDestroy()  
@@ -35,7 +36,13 @@ public class DialogueManager : MonoBehaviour
         if (GameEventsManager.instance != null)
         {
             GameEventsManager.instance.dialogueEvents.onEnterDialogue -= EnterDialogue;
+            GameEventsManager.instance.dialogueEvents.onUpdateChoiceIndex -= UpdateChoiceIndex;
         }
+    }
+
+    private void UpdateChoiceIndex(int choiceIndex)
+    {
+        this.currentChoiceIndex = choiceIndex;
     }
 
     private void SubmitPressed()
@@ -79,12 +86,19 @@ public class DialogueManager : MonoBehaviour
 
     private void ContinueOrExitStory()
     {
+        //make a choice, if applicable
+        if(story.currentChoices.Count > 0 && currentChoiceIndex != -1)
+        {
+            story.ChooseChoiceIndex(currentChoiceIndex);
+            //reset choice index for next time
+            currentChoiceIndex = -1;
+        }
         if (story.canContinue)
         {
             string dialogueLine = story.Continue();
-            GameEventsManager.instance.dialogueEvents.DisplayDialogue(dialogueLine);
+            GameEventsManager.instance.dialogueEvents.DisplayDialogue(dialogueLine, story.currentChoices);
         }
-        else
+        else if (story.currentChoices.Count == 0) //if there are no more paths, exit dialogue
         {
             ExitDialogue();
         }

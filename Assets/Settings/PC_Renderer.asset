@@ -13,10 +13,7 @@ MonoBehaviour:
   m_Name: PixelateFeature
   m_EditorClassIdentifier: Assembly-CSharp::PixelateFeature
   m_Active: 1
-  settings:
-    pixelateMaterial: {fileID: 2100000, guid: 9be50717c1f88cd429dcf598b6bfa56d, type: 2}
-    blockSize: 100
-    renderPassEvent: 400
+  settings: {pixelateMaterial: {fileID: 2100000, guid: 9be50717c1f88cd429dcf598b6bfa56d, type: 2}, blockSize: 100, renderPassEvent: 400}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,7 +40,7 @@ MonoBehaviour:
     probeVolumeBlendStatesCS: {fileID: 7200000, guid: b9a23f869c4fd45f19c5ada54dd82176, type: 3}
   m_RendererFeatures:
   - {fileID: 7833122117494664109}
-  - {fileID: -2566127546456630857}
+  - {fileID: 0}
   m_RendererFeatureMap: ad6b866f10d7b46cb7991ba9974863dc
   m_UseNativeRenderPass: 1
   xrSystemData: {fileID: 0}

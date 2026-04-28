@@ -15,39 +15,9 @@ public class Interactor : MonoBehaviour
     private IInteractable interactable;
 
     private bool isDisabled = false;
-    private float reEnableDelay = 0.2f; //delay so the dialogue can close 
 
     private PlayerController playerController;
 
-    private void Start()
-    {
-        playerController = GetComponent<PlayerController>();
-        GameEventsManager.instance.dialogueEvents.onDialogueStarted += OnDialogueStarted;
-        GameEventsManager.instance.dialogueEvents.onDialogueFinished += OnDialogueFinished;
-    }
-
-    private void OnDestroy()
-    {
-        if (GameEventsManager.instance != null)
-        {
-            GameEventsManager.instance.dialogueEvents.onDialogueStarted -= OnDialogueStarted;
-            GameEventsManager.instance.dialogueEvents.onDialogueFinished -= OnDialogueFinished;
-        }
-    }
-    private void OnDialogueStarted()
-    {
-        isDisabled = true;
-        // hide prompt if showing
-        playerController.canMove = false;
-        if (interactionPromptUI.isDisplayed)
-            interactionPromptUI.Close();
-    }
-
-    private void OnDialogueFinished()
-    {
-        playerController.canMove = true;
-        StartCoroutine(ReEnableAfterDelay());
-    }
 
     private void Update()
     {
@@ -75,12 +45,7 @@ public class Interactor : MonoBehaviour
             if (interactionPromptUI.isDisplayed) interactionPromptUI.Close();
         }
     }
-    private IEnumerator ReEnableAfterDelay()
-    {
-        // wait for input to clear
-        yield return new WaitForSeconds(0.3f);
-        isDisabled = false;
-    }
+
 
     private void OnDrawGizmos()
     {

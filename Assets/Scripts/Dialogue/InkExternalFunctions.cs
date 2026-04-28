@@ -4,7 +4,10 @@ public class InkExternalFunctions
 {
     public void Bind(Story story)
     {
-        story.BindExternalFunction ("StartQuest", (string questId) => StartQuest(questId));
+
+        story.BindExternalFunction("StartQuest", (string questId) => StartQuest(questId));
+        story.BindExternalFunction("AdvanceQuest", (string questId) => AdvanceQuest(questId));
+        story.BindExternalFunction("StartQuest", (string questId) => StartQuest(questId));
     }
 
     public void Unbind(Story story)

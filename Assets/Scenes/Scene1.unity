@@ -1811,13 +1811,13 @@ MonoBehaviour:
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
   m_Cameras: []
-  m_RendererIndex: -1
+  m_RendererIndex: 0
   m_VolumeLayerMask:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -2255,7 +2255,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2604,6 +2604,14 @@ PrefabInstance:
     - target: {fileID: 2656857831364720957, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
       propertyPath: m_Name
       value: DialogueChoiceButton1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656857831364720957, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152208196163555524, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7455402054022555265, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
       propertyPath: m_Pivot.x
@@ -3187,6 +3195,14 @@ PrefabInstance:
     - target: {fileID: 2656857831364720957, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
       propertyPath: m_Name
       value: DialogueChoiceButton0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2656857831364720957, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152208196163555524, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
+      propertyPath: m_Layer
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7455402054022555265, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
       propertyPath: m_Pivot.x

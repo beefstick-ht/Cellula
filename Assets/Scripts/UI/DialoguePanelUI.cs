@@ -27,9 +27,13 @@ public class DialoguePanelUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameEventsManager.instance.dialogueEvents.onDialogueStarted -= DialogueStarted;
-        GameEventsManager.instance.dialogueEvents.onDialogueFinished -= DialogueFinished;
-        GameEventsManager.instance.dialogueEvents.onDisplayDialogue -= DisplayDialogue;
+
+        if (GameEventsManager.instance != null)
+        {
+            GameEventsManager.instance.dialogueEvents.onDialogueStarted -= DialogueStarted;
+            GameEventsManager.instance.dialogueEvents.onDialogueFinished -= DialogueFinished;
+            GameEventsManager.instance.dialogueEvents.onDisplayDialogue -= DisplayDialogue;
+        }
     }
 
     private void DialogueStarted()

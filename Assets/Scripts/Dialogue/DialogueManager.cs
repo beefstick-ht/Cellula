@@ -75,6 +75,7 @@ public class DialogueManager : MonoBehaviour
 
         dialoguePlaying = true;
 
+
         //inform other parts of our system we started dialogue
         GameEventsManager.instance.dialogueEvents.DialogueStarted();
 

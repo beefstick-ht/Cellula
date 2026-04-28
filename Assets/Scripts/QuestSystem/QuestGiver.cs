@@ -41,34 +41,36 @@ public class QuestGiver : MonoBehaviour, IInteractable
 
     public bool Interact(Interactor interactor)
     {
-        if (GameEventsManager.instance == null)
-            return false;
+        if (GameEventsManager.instance == null) return false;
 
-        // get current quest state
-        Quest currentQuest = GameEventsManager.instance
-            .questEvents.GetQuest(quest.id);
-
+        Quest currentQuest = GameEventsManager.instance.questEvents.GetQuest(quest.id);
         if (currentQuest == null) return false;
+
+        // Use a string to hold which knot we should play
+        string knotToPlay = "";
 
         if (currentQuest.state == QuestState.CAN_START)
         {
-            // start the quest and play accept dialogue
-            GameEventsManager.instance.dialogueEvents.EnterDialogue(startKnot);
+            knotToPlay = startKnot;
             GameEventsManager.instance.questEvents.StartQuest(quest.id);
         }
-
-        if (currentQuest.state == QuestState.CAN_FINISH)
+        else if (currentQuest.state == QuestState.CAN_FINISH)
         {
-            // finish the quest and play complete dialogue
-            GameEventsManager.instance.dialogueEvents.EnterDialogue(finishKnot);
+            knotToPlay = finishKnot;
             GameEventsManager.instance.questEvents.FinishQuest(quest.id);
         }
-
-        if (currentQuest.state == QuestState.IN_PROGRESS)
+        else if (currentQuest.state == QuestState.IN_PROGRESS)
         {
-            GameEventsManager.instance.dialogueEvents.EnterDialogue(inProgressKnot);
+            knotToPlay = inProgressKnot;
         }
 
-        return true;
+        // This is the trigger that makes the DialogueUI appear
+        if (!string.IsNullOrEmpty(knotToPlay))
+        {
+            GameEventsManager.instance.dialogueEvents.EnterDialogue(knotToPlay);
+            return true;
+        }
+
+        return false;
     }
 }

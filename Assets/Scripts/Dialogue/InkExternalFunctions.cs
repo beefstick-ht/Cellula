@@ -12,7 +12,9 @@ public class InkExternalFunctions
 
     public void Unbind(Story story)
     {
-
+        story.UnbindExternalFunction("StartQuest");
+        story.UnbindExternalFunction("AdvanceQuest");
+        story.UnbindExternalFunction("FinishQuest");
     }
    
     private void StartQuest(string questId)

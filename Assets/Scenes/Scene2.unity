@@ -3778,9 +3778,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::QuestGiver
   quest: {fileID: 11400000, guid: b743416f321a3194eaa5a8a8a0fdf6f0, type: 2}
   prompt: Talk
-  startKnot: npcQuest
-  inProgressKnot: Be sure to look everywhere
-  finishKnot: You found it!
+  startKnot: canStart
+  inProgressKnot: inProgress
+  finishKnot: finished
 --- !u!65 &657894311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3868,7 +3868,7 @@ Transform:
   m_GameObject: {fileID: 657894309}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.7, y: 0.82, z: 25.7}
+  m_LocalPosition: {x: 5.7, y: 0.82, z: 35.09}
   m_LocalScale: {x: 1.3094, y: 1.3094, z: 1.3094}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4322,6 +4322,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 655196890}
   m_LocalEulerAnglesHint: {x: 0, y: -94.525, z: 0}
+--- !u!1 &741909032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 741909034}
+  - component: {fileID: 741909033}
+  m_Layer: 0
+  m_Name: KeyCollectQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &741909033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741909032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da544a942370bf428bc79aca65464af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CollectKeyQuestStep
+  requiredKey: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
+--- !u!4 &741909034
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741909032}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.14842, y: 0, z: -5.78786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &759957768
 GameObject:
   m_ObjectHideFlags: 0
@@ -11134,3 +11179,4 @@ SceneRoots:
   - {fileID: 981156738}
   - {fileID: 655196890}
   - {fileID: 226355844}
+  - {fileID: 741909034}

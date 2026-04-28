@@ -16,7 +16,7 @@ MonoBehaviour:
   settings:
     pixelateMaterial: {fileID: 2100000, guid: 9be50717c1f88cd429dcf598b6bfa56d, type: 2}
     blockSize: 100
-    renderPassEvent: 500
+    renderPassEvent: 400
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

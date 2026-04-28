@@ -1,3 +1,7 @@
+EXTERNAL StartQuest(questId)
+EXTERNAL AdvanceQuest(questId)
+EXTERNAL FinishQuest(questId)
+
 === QuestionQueer ===
 I want to tell you something.
 * [Okay.]
@@ -8,11 +12,10 @@ I want to tell you something.
     -> END
 
 === npcQuest ===
-{ questCompleted:
-    Wow, I didn't know you were a girl kisser...
-    Maybe you can find a gun to help me?
-- else:
-    Why are you talking to me?
-}
--> END
-VAR questCompleted =  true
+Want to help me find a key?
+*[Sure]
+    ~StartQuest("FindKeyQuest1")
+    I am not sure where it is
+    -> END
+* [No]
+    -> END

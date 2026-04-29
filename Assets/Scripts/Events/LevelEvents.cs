@@ -1,0 +1,11 @@
+
+using UnityEngine;
+using UnityEngine.Events;
+public class LevelEvents
+{
+    //Vector 3 location for spawn
+    public static UnityAction<Transform> levelLoaded;
+
+    //string name of target transform to spawn player at in new level
+    public static UnityAction<string, string> levelExit;
+}

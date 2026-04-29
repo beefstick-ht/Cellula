@@ -2281,9 +2281,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
   triggererTag: Player
-  playerSpawnTransformName: PlayerSpawnScene2Left
+  playerSpawnTransformName: CityEntrance1
   enterSpeed: 1
-  sceneToLoad: Scene2
+  sceneToLoad: City
   fadeAnimation: {fileID: 2819598310693532818, guid: 657d6bac3de584544af1c58f0c04391c, type: 3}
 --- !u!65 &1414443030
 BoxCollider:

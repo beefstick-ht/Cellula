@@ -4,6 +4,7 @@ using UnityEngine.InputSystem.XR;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public float sprintMultiplier; //what will be used to sprint
     public float rotateSpeed;
 
     public float gravity = 9.8f; //player gravity
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
 
     private bool isGrounded;
+    public bool canMove = true;
     private Vector3 velocity;
     private Transform feet;
 
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!canMove) return;
+
         Move();
         CheckIsGrounded();
         ApplyGravity();
@@ -33,13 +37,20 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         float rotate = Input.GetAxis("Horizontal") * rotateSpeed * Time.deltaTime;
-        float move = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+
+        bool isSprinting = Input.GetKey(KeyCode.LeftShift); //checks if the player is sprinting
+        Debug.Log("isSprinting: " + isSprinting + " moveSpeed: " + moveSpeed + " sprintMultiplier: " + sprintMultiplier);
+        // if sprinting multiply speed, otherwise use normal speed
+
+        float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;  //the ? is a shorthand else/if to check if the plyer is sprinting or not
+
+        float move = Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime;
 
         transform.Rotate(Vector3.up * rotate);
-
         controller.Move(transform.forward * move);
 
     }
+
 
     private void CheckIsGrounded()
     {
@@ -47,13 +58,17 @@ public class PlayerController : MonoBehaviour
     }
     private void ApplyGravity()
     {
-        velocity += Vector3.down * gravity * Time.deltaTime;
+       //should check is grounded first
 
         if (isGrounded)
         {
             velocity = Vector3.zero;
         }
+        else
+        {
+            velocity += Vector3.down * gravity * Time.deltaTime;
+        }
 
-        controller.Move(velocity);
+        controller.Move(velocity * Time.deltaTime);
     }
 }

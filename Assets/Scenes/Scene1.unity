@@ -2203,7 +2203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionPrompt
   label: {fileID: 59249120}
   worldOffset: {x: 0, y: 1, z: 0}
-  keyHint: '[E}'
+  keyHint: '[E] '
 --- !u!1 &1414443028
 GameObject:
   m_ObjectHideFlags: 0

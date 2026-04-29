@@ -3536,7 +3536,6 @@ GameObject:
   - component: {fileID: 657894313}
   - component: {fileID: 657894312}
   - component: {fileID: 657894311}
-  - component: {fileID: 657894310}
   m_Layer: 6
   m_Name: QuestGiver
   m_TagString: Untagged
@@ -3544,23 +3543,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &657894310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 657894309}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39de59b5ffc5f394687d3e00eed7da6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuestGiver
-  quest: {fileID: 11400000, guid: b743416f321a3194eaa5a8a8a0fdf6f0, type: 2}
-  prompt: Talk
-  startKnot: canStart
-  inProgressKnot: inProgress
-  finishKnot: finished
 --- !u!65 &657894311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4111,7 +4093,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 741909034}
-  - component: {fileID: 741909033}
   m_Layer: 0
   m_Name: KeyCollectQuest
   m_TagString: Untagged
@@ -4119,19 +4100,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &741909033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 741909032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da544a942370bf428bc79aca65464af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CollectKeyQuestStep
-  requiredKey: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
 --- !u!4 &741909034
 Transform:
   m_ObjectHideFlags: 0

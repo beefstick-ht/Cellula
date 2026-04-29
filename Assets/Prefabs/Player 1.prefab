@@ -182,6 +182,7 @@ MonoBehaviour:
   interactableLayers:
     serializedVersion: 2
     m_Bits: 64
+  prompt: {fileID: 0}
 --- !u!1 &1745592240250295934
 GameObject:
   m_ObjectHideFlags: 0

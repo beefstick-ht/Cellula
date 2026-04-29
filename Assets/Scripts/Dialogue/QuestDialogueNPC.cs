@@ -16,6 +16,8 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     private int index;
     private bool typing = false;
     private string[] activeLines;  //depending on where the quest is at, the string will produce the respective lines
+    public static bool IsInDialogue { get; private set; }
+    private bool isLocked = false;//prevents reopening during cooldown
 
     [Header("Quest Configuration")]
     public string requiredItemID = "";
@@ -62,7 +64,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && typing)
+        if (Input.GetKeyDown(KeyCode.E) && typing)
         {
             if (text.text == activeLines[index])
             {
@@ -86,6 +88,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
     public void StartDialogue()
     {
+        IsInDialogue = true;
         //npc decides which lines to use
         if (isQuestComplete)
         {
@@ -151,10 +154,24 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
         void EndDialogue()
         {
+            IsInDialogue = false;
             typing = false;
             text.text = string.Empty;
             DialoguePanelUI.instance.ClosePanel();
             dialogueCam.gameObject.SetActive(false);
+        StartCoroutine(DialogueCooldown());
 
-        }
     }
+    IEnumerator DialogueCooldown()
+    {
+        isLocked = true;
+        // Keep IsInDialogue true so the Interactor ignores "E"
+        IsInDialogue = true;
+
+        // Wait for exactly 2 seconds
+        yield return new WaitForSeconds(2f);
+
+        isLocked = false;
+        IsInDialogue = false;
+    }
+}

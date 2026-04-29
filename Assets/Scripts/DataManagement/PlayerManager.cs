@@ -24,6 +24,7 @@ public class PlayerManager : ScriptableObject
 
         //dupliate on start so values do not change in the editor
         PlayerStats = Instantiate(startingPlayerStats);
+
     }
 
     protected void SpawnPlayer(Transform spawnTransform)

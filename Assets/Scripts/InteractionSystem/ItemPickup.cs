@@ -6,7 +6,6 @@ public class ItemPickup : MonoBehaviour, IInteractable
     [SerializeField] private string itemID;
     [SerializeField] private string itemName = "";
 
-    // satisfy the interface requirements
     public string DisplayName => itemName;
     public string InteractionPrompt => "Pick up " + itemName;
     private Outline outline;

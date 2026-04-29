@@ -8,11 +8,22 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private float radius = 2f;
     [SerializeField] private LayerMask interactableLayers;
+    [SerializeField] private InteractionPrompt prompt;
     private Collider[] buffer = new Collider[32]; //contains all the objects around player
     private IInteractable focused;  //object currently focusing
-
+    private void Awake()
+    {
+        // If the slot is empty, find the UI in the scene automatically
+        if (prompt == null)
+        {
+            prompt = FindFirstObjectByType<InteractionPrompt>();
+        }
+    }
     private void Update()
     {
+        // if npc is currently talking, dont allow new interactions
+        if (QuestDialogueNPC.IsInDialogue) return;
+
         IInteractable nearest = FindNearestInteractable();
         UpdateFocus(nearest);
 
@@ -54,6 +65,15 @@ public class Interactor : MonoBehaviour
         if (ReferenceEquals(focused, nearest)) return;
         focused?.OnFocusLost();
         focused = nearest;
-        focused?.OnFocusGained();
+        if(focused!= null)
+        {
+            focused.OnFocusGained();
+            prompt.Show(focused);
+        }
+        else  //interaction prompt show / hide
+        {
+            prompt.Hide();
+        }
     }
+
 }

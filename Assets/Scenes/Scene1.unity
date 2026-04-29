@@ -578,52 +578,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &408392270
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 408392271}
-  - component: {fileID: 408392272}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &408392271
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408392270}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1978281028}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &408392272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408392270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4579ec0841a9096468934a9a318403f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  inventoryMenu: {fileID: 1206979276}
-  items: []
 --- !u!1 &417053108
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +676,7 @@ RectTransform:
   - {fileID: 1568966228}
   - {fileID: 1206979277}
   - {fileID: 1177880806}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1862580886}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2954,6 +2908,7 @@ GameObject:
   - component: {fileID: 1862580886}
   - component: {fileID: 1862580884}
   - component: {fileID: 1862580887}
+  - component: {fileID: 1862580888}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2988,7 +2943,8 @@ Transform:
   m_LocalPosition: {x: -4.65473, y: 0, z: -17.51194}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 417053112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1862580887
@@ -3003,6 +2959,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6280fc8f9916a44682a90f70e6cce80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameEventsManager
+--- !u!114 &1862580888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862580883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4579ec0841a9096468934a9a318403f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  inventoryMenu: {fileID: 1206979276}
+  items: []
 --- !u!1 &1978281027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,7 +3004,6 @@ Transform:
   m_Children:
   - {fileID: 721410065}
   - {fileID: 870233368}
-  - {fileID: 408392271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1995794998
@@ -3203,5 +3172,4 @@ SceneRoots:
   - {fileID: 442637153}
   - {fileID: 1862580886}
   - {fileID: 1978281028}
-  - {fileID: 417053112}
   - {fileID: 1739248620}

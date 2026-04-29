@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
-    [SerializeField] private bool isLocked = false; //allows for some doors to be locked while others can stay unlocked
-    [SerializeField] private Key requiredKey;
+    [SerializeField] private bool isLocked = false;
+    [SerializeField] private string requiredItemID = ""; //specific key used to unlock door using id
     [SerializeField] private Animator doorAnimator;
     [SerializeField] private LevelTransition levelTransition;
-    [SerializeField] private string doorID; // unique name for this door
+    [SerializeField] private string doorID;  //specific doors have specific keys
 
     [Header("Prompts")]
     [SerializeField] private string lockedPrompt = "The door is locked.";
     [SerializeField] private string unlockedPrompt = "Use Key?";
-    [SerializeField] private string openPrompt = "Opening door.";
+    [SerializeField] private string openPrompt = "Opening door...";
 
     private bool isOpen = false;
 
@@ -19,56 +19,40 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     {
         get
         {
-            if (isOpen)
-                return openPrompt;
+            if (isOpen) return openPrompt;
 
             if (isLocked)
             {
-                if (requiredKey == null)
-                    return lockedPrompt; // just show locked if no key assigned
-
-                if (KeyInventory.Instance != null && KeyInventory.Instance.HasKey(requiredKey))
+                // Check if the player has the string ID in their inventory
+                if (Inventory.instance != null && Inventory.instance.HasItem(requiredItemID))
+                {
                     return unlockedPrompt;
-
+                }
                 return lockedPrompt;
             }
 
-            return unlockedPrompt;
+            return "Open Door";
         }
     }
 
     public bool Interact(Interactor interactor)
     {
-        if (isOpen)
-            return false;
+        if (isOpen) return false;
 
         if (isLocked)
         {
-
-            if (requiredKey == null)
+            // Check the inventory for the string ID
+            if (Inventory.instance != null && Inventory.instance.HasItem(requiredItemID))
             {
-                Debug.LogError("No key assigned to this door");
-                return false;
-            }
-
-            if (KeyInventory.Instance == null)
-            {
-                Debug.LogError("No KeyInventory found");
-                return false;
-            }
-
-            if (KeyInventory.Instance.HasKey(requiredKey))
-            {
-                isOpen = true;
-                doorAnimator?.SetTrigger("Open");
-                GetComponent<Collider>().enabled = false;
+                OpenDoor();
                 return true;
             }
 
+            Debug.Log("Door is locked. You need: " + requiredItemID);
             return false;
         }
-        //either the door is alr unlocked or the player HasKey
 
+        // If not locked, just open
         OpenDoor();
         return true;
     }
@@ -76,10 +60,22 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     private void OpenDoor()
     {
         isOpen = true;
-        doorAnimator?.SetTrigger("Open");
-        DoorEvents.onDoorOpened?.Invoke(doorID);
+
+        if (doorAnimator != null)
+        {
+            doorAnimator.SetTrigger("Open");
+        }
+
+        // Disable collider so player can walk through
+        if (GetComponent<Collider>() != null)
+        {
+            GetComponent<Collider>().enabled = false;
+        }
+
+        // Trigger level transition if it exists
         if (levelTransition != null)
+        {
             levelTransition.enabled = true;
+        }
     }
-  
 }

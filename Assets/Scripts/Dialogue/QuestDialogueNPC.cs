@@ -9,8 +9,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     public TextMeshProUGUI text;
     public Image dialogueBox;
     public Camera dialogueCam; //dedicated camera when talking to an npc
-    public GameObject player;
-
+ 
     [Header("Dialogue Settings")]
     public float textSpeed = 0.05f;
     private int index;
@@ -41,17 +40,18 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
         {
             if (text.text == activeLines[index])
             {
-                NextLine();
+                NextLine(); 
             }
             else
             {
                 StopAllCoroutines();
                 text.text = activeLines[index];
+                // update the UI text immediately when skipping
+                DialoguePanelUI.instance.UpdateText(text.text);
             }
         }
     }
-
-    // This is called by your Interactor script
+    // this is called by Interactor script
     public bool Interact(Interactor interactor)
     {
         StartDialogue();
@@ -60,70 +60,75 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
     public void StartDialogue()
     {
-        // Determine which set of lines to play
+        //npc decides which lines to use
         if (isQuestComplete)
         {
             activeLines = postQuestLines;
         }
         else if (hasAcceptedQuest)
         {
-            // Check the inventory system
-            if (Inventory.instance != null && Inventory.instance.HasItem(requiredItemID))
+            if (Inventory.instance.HasItem(requiredItemID))
             {
-                activeLines = completionLines;
-                Inventory.instance.RemoveItem(requiredItemID);
+                activeLines = completionLines; //set the text to the completion lines
+                Inventory.instance.RemoveItem(requiredItemID); //removes the item from the inventory
                 isQuestComplete = true;
             }
-            else
-            {
-                activeLines = waitingLines;
-            }
+            else { activeLines = waitingLines; }
         }
+        // If accepted but no item, use waitingLines
         else
         {
             activeLines = introductionLines;
             hasAcceptedQuest = true;
-        }
+        } //item not in inventory yet
 
-        index = 0;
-        text.text = string.Empty;
-        typing = true;
-        
-        dialogueCam.gameObject.SetActive(true);
-        player.SetActive(false);
-        
-        StartCoroutine(TypeLine());
-    }
+            // turn on the panel through the dialoguepanelUI script
+            DialoguePanelUI.instance.OpenPanel();
 
-    IEnumerator TypeLine()
-    {   
-        //takes a full sentence and breaks it into an array of letters to type out one by one
-        foreach (char c in activeLines[index].ToCharArray())
-        {
-            text.text += c;
-            yield return new WaitForSeconds(textSpeed); //the typing effect
-        }
-    }
-
-    void NextLine()
-    {
-        if (index < activeLines.Length - 1)
-        {
-            index++;
+            index = 0;
             text.text = string.Empty;
+            typing = true;
+
+            // Swap cameras and freeze the player
+            dialogueCam.gameObject.SetActive(true);
+            
+
             StartCoroutine(TypeLine());
-        }
-        else
-        {
-            EndDialogue();
-        }
+
     }
 
-    void EndDialogue()
-    {
-        typing = false;
-        text.text = string.Empty;
-        dialogueCam.gameObject.SetActive(false);
-        player.SetActive(true);
+        IEnumerator TypeLine()
+        {
+            //takes a full sentence and breaks it into an array of letters to type out one by one
+            foreach (char c in activeLines[index].ToCharArray())
+            {
+                text.text += c;
+                yield return new WaitForSeconds(textSpeed); //the typing effect
+                DialoguePanelUI.instance.UpdateText(text.text);
+            }
+        }
+
+        void NextLine()
+        {
+            if (index < activeLines.Length - 1)
+            {
+                index++;
+                text.text = string.Empty;
+                StartCoroutine(TypeLine());
+            }
+            else
+            {
+                EndDialogue();
+
+            }
+        }
+
+        void EndDialogue()
+        {
+            typing = false;
+            text.text = string.Empty;
+            DialoguePanelUI.instance.ClosePanel();
+            dialogueCam.gameObject.SetActive(false);
+
+        }
     }
-}

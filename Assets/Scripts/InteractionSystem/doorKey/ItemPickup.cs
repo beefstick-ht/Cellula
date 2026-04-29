@@ -8,7 +8,7 @@ public class ItemPickup : MonoBehaviour, IInteractable
     public string InteractionPrompt => prompt;
     private void Start()
     {
-        // Check if the player already has this specific item
+        // Check if player already has this specific item
         if (Inventory.instance != null && Inventory.instance.HasItem(itemID))
         {
             // If they have it this object is set inactive
@@ -19,7 +19,7 @@ public class ItemPickup : MonoBehaviour, IInteractable
     {
         if (Inventory.instance == null)
         {
-            Debug.LogError("No Inventory instance found in the scene!");
+            Debug.LogError("No Inventory instance found in the scene");
             return false;
         }
         Inventory.instance.AddItem(itemID);

@@ -13,7 +13,13 @@ public class DialoguePanelUI : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance != null && instance != this) //it does not register without the singleton present
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        instance = this;
 
         contentParent.SetActive(false);
         dialogueText.text = "";

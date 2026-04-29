@@ -367,6 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4579ec0841a9096468934a9a318403f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  inventoryMenu: {fileID: 0}
+  items: []
 --- !u!4 &249419626
 Transform:
   m_ObjectHideFlags: 0
@@ -688,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyCollectible
   prompt: You found a key!
-  key: {fileID: 11400000, guid: 2939269083301434dbaf06332eba7698, type: 2}
+  itemID: 
 --- !u!1 &529764630
 GameObject:
   m_ObjectHideFlags: 0
@@ -2627,17 +2629,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7455402054022555265, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
   m_PrefabInstance: {fileID: 1678005187}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1678005189 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4307270999944009180, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
-  m_PrefabInstance: {fileID: 1678005187}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9f416bc4e804d48b9f055df068b0c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceButton
 --- !u!1 &1802335291
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,7 +2641,6 @@ GameObject:
   - component: {fileID: 1802335294}
   - component: {fileID: 1802335293}
   - component: {fileID: 1802335292}
-  - component: {fileID: 1802335296}
   m_Layer: 6
   m_Name: npc
   m_TagString: Untagged
@@ -2751,20 +2741,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1802335296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1802335291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a5c739cf16be614aba7c9245bd48872, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPCInteractable
-  prompt: Talk
-  knotName: QuestionQueer
 --- !u!1 &1858007246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,9 +2902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialoguePanelUI
   contentParent: {fileID: 603801197}
   dialogueText: {fileID: 696213013}
-  choiceButtons:
-  - {fileID: 919371913606584068}
-  - {fileID: 1678005189}
 --- !u!1 &1978281027
 GameObject:
   m_ObjectHideFlags: 0
@@ -3216,17 +3189,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7455402054022555265, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
   m_PrefabInstance: {fileID: 919371913606584066}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &919371913606584068 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4307270999944009180, guid: 3a600a66ca944994c967b3e6888b0477, type: 3}
-  m_PrefabInstance: {fileID: 919371913606584066}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9f416bc4e804d48b9f055df068b0c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueChoiceButton
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

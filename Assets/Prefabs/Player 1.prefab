@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2677402197214026584}
   - component: {fileID: 1288787840836329663}
   - component: {fileID: 7381939876395150521}
-  - component: {fileID: 5888905888537312164}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -142,6 +141,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  canMove: 1
 --- !u!143 &1288787840836329663
 CharacterController:
   m_ObjectHideFlags: 0
@@ -186,18 +186,6 @@ MonoBehaviour:
     m_Bits: 64
   interactionPromptUI: {fileID: 3272538430351483501}
   numFound: 0
---- !u!114 &5888905888537312164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 514989584922784354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4579ec0841a9096468934a9a318403f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
 --- !u!1 &1745592240250295934
 GameObject:
   m_ObjectHideFlags: 0

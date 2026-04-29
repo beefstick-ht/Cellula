@@ -1,8 +1,9 @@
-using UnityEngine;
+using NUnit.Framework.Interfaces;
+using QuickOutline;
 using System.Collections;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using QuickOutline;
 
 public class QuestDialogueNPC : MonoBehaviour, IInteractable
 {
@@ -34,6 +35,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
     private QuickOutline.Outline outline;
     [SerializeField] private string npcName = "";  //have to pass in a name since interaface says this property must exist
+    public QuestData questData;
     public string DisplayName => npcName;
 
     void Awake()
@@ -90,26 +92,26 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     {
         IsInDialogue = true;
         //npc decides which lines to use
-        if (isQuestComplete)
+        if (questData.isQuestComplete)
         {
             activeLines = postQuestLines;
         }
-        else if (hasAcceptedQuest)
+        else if (questData.hasAcceptedQuest)
         {
             if (Inventory.instance.HasItem(requiredItemID))
             {
-                activeLines = completionLines; //set the text to the completion lines
-                Inventory.instance.RemoveItem(requiredItemID); //removes the item from the inventory
-                isQuestComplete = true;
+                activeLines = completionLines;
+                Inventory.instance.RemoveItem(requiredItemID);
+                questData.isQuestComplete = true; 
             }
             else { activeLines = waitingLines; }
         }
-        // If accepted but no item, use waitingLines
         else
         {
             activeLines = introductionLines;
-            hasAcceptedQuest = true;
-        } //item not in inventory yet
+            questData.hasAcceptedQuest = true; 
+        }
+     //item not in inventory yet
 
             // turn on the panel through the dialoguepanelUI script
             DialoguePanelUI.instance.OpenPanel();

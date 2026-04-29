@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    // This allows the NPC to say: Inventory.instance.HasItem(...)
     public static Inventory instance;
 
     [Header("UI Reference")]
@@ -11,12 +10,20 @@ public class Inventory : MonoBehaviour
     private bool isMenuOpen = false;
 
     [Header("Item Tracking")]
-    // A list of strings representing the item IDs currently held
+    // list of strings representing the item IDs currently held
     public List<string> items = new List<string>();
 
-    void Awake()
+    private void Awake()
     {
-        if (instance == null) instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // this object survives scene changes
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()

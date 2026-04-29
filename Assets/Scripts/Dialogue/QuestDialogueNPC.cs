@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using QuickOutline;
 
 public class QuestDialogueNPC : MonoBehaviour, IInteractable
 {
@@ -27,7 +28,32 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     [TextArea] public string[] completionLines;   // Talk when item is found
     [TextArea] public string[] postQuestLines;     // Talk after quest is finished
 
-    public string InteractionPrompt => "Talk";
+    //all of the stuff below is in regards to the outline interactable
+
+    private QuickOutline.Outline outline;
+    [SerializeField] private string npcName = "";  //have to pass in a name since interaface says this property must exist
+    public string DisplayName => npcName;
+
+    void Awake()
+    {
+        outline = gameObject.AddComponent<QuickOutline.Outline>();
+        outline.OutlineMode = QuickOutline.Outline.Mode.OutlineVisible;
+        outline.OutlineColor = Color.yellow;
+        outline.OutlineWidth = 5f;
+        outline.enabled = false;
+    }
+
+    public bool CanInteract() => !typing; //if alr talking cannot talk
+
+    public void Interact() => StartDialogue();
+
+    public void OnFocusGained()
+    {
+        outline.enabled = true;
+    }
+
+    public void OnFocusLost() => outline.enabled = false;
+
 
     void Start()
     {

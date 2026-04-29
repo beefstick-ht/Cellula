@@ -1,4 +1,5 @@
 using UnityEngine;
+using QuickOutline;
 
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
@@ -14,7 +15,33 @@ public class DoorInteractable : MonoBehaviour, IInteractable
     [SerializeField] private string openPrompt = "Opening door...";
 
     private bool isOpen = false;
+    private Outline outline;
+    [SerializeField] private string doorName = "";
+    public string DisplayName => doorName;
 
+    void Awake()
+    {
+        outline = gameObject.AddComponent<Outline>();
+        outline.enabled = false;
+    }
+
+    public bool CanInteract() => !isOpen;
+
+    public void Interact()
+    {
+        if (isLocked)
+        {
+            if (Inventory.instance != null && Inventory.instance.HasItem(requiredItemID))
+            {
+                OpenDoor();
+            }
+            else { Debug.Log("Locked"); }
+        }
+        else { OpenDoor(); }
+    }
+
+    public void OnFocusGained() => outline.enabled = true;
+    public void OnFocusLost() => outline.enabled = false;
     public string InteractionPrompt
     {
         get
@@ -35,27 +62,7 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         }
     }
 
-    public bool Interact(Interactor interactor)
-    {
-        if (isOpen) return false;
 
-        if (isLocked)
-        {
-            // Check the inventory for the string ID
-            if (Inventory.instance != null && Inventory.instance.HasItem(requiredItemID))
-            {
-                OpenDoor();
-                return true;
-            }
-
-            Debug.Log("Door is locked. You need: " + requiredItemID);
-            return false;
-        }
-
-        // If not locked, just open
-        OpenDoor();
-        return true;
-    }
 
     private void OpenDoor()
     {

@@ -2,7 +2,13 @@ using UnityEngine;
 
 public interface IInteractable //is what is connecting all the other scripts to the interact function
 {
-    public string InteractionPrompt { get; }
+    Transform transform { get; }
 
-    public bool Interact (Interactor interactor);
+    string DisplayName { get; }
+
+    bool CanInteract();
+    void Interact();
+    void OnFocusGained();
+    void OnFocusLost();
+
 }

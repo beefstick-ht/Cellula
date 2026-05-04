@@ -43,8 +43,13 @@ public class PlayerController : MonoBehaviour
          // if sprinting multiply speed, otherwise use normal speed
         float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;  //the ? is a shorthand else/if to check if the plyer is sprinting or not
 
+        //both forward/backward and left/right rotations trigger movement
+        float moveAmount = Mathf.Abs(verticalInput);
+        float turnAmount = Mathf.Abs(horizontalInput);
+        float totalActivity = Mathf.Max(moveAmount, turnAmount);
+
         // this sends a value of 2.0 if sprinting, otherwise it sends the raw vertical input (0 to 1)
-        float animationValue = isSprinting && verticalInput > 0 ? 2.0f : Mathf.Abs(verticalInput);
+        float animationValue = (isSprinting && verticalInput > 0) ? 2.0f : totalActivity;
         if (anim != null)
         {
             anim.SetFloat("Speed", animationValue);  //changes anim based on speed

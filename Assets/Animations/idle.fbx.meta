@@ -395,10 +395,60 @@ ModelImporter:
       position: {x: 0.00006823298, y: 0.06613915, z: 0.001769585}
       rotation: {x: -0.031279933, y: 0.04653305, z: 0.029379593, w: 0.99799454}
       scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftUpLeg
+      parentName: marsh_final_V03:Hips
+      position: {x: -0.0061589996, y: -0.00337, z: -0.001798}
+      rotation: {x: -0.13678528, y: 0.078994684, z: 0.9846804, w: 0.07385224}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftLeg
+      parentName: marsh_final_V03:LeftUpLeg
+      position: {x: -0, y: 0.028187, z: 0}
+      rotation: {x: -0.13614735, y: 0.013321631, z: -0.043265413, w: 0.98965377}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftFoot
+      parentName: marsh_final_V03:LeftLeg
+      position: {x: -0, y: 0.027672, z: 0}
+      rotation: {x: 0.46909282, y: -0.020233978, z: 0.02411537, w: 0.8825877}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftToeBase
+      parentName: marsh_final_V03:LeftFoot
+      position: {x: -0, y: 0.011381, z: 0}
+      rotation: {x: 0.35841691, y: 0.23404028, z: -0.07116323, w: 0.90094304}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftToe_End
+      parentName: marsh_final_V03:LeftToeBase
+      position: {x: -0, y: 0.0050779996, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightUpLeg
+      parentName: marsh_final_V03:Hips
+      position: {x: 0.0061589996, y: -0.00337, z: -0.001877}
+      rotation: {x: 0.09110817, y: -0.01373132, z: 0.99520195, w: 0.03292154}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightLeg
+      parentName: marsh_final_V03:RightUpLeg
+      position: {x: -0, y: 0.028183999, z: 0}
+      rotation: {x: -0.07950336, y: -0.08389576, z: 0.037304066, w: 0.9925972}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightFoot
+      parentName: marsh_final_V03:RightLeg
+      position: {x: -0, y: 0.027672999, z: 0}
+      rotation: {x: 0.50731385, y: 0.042846262, z: 0.008163199, w: 0.86065686}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightToeBase
+      parentName: marsh_final_V03:RightFoot
+      position: {x: -0, y: 0.011692, z: 0}
+      rotation: {x: 0.36833447, y: -0.24752025, z: 0.068359874, w: 0.893527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightToe_End
+      parentName: marsh_final_V03:RightToeBase
+      position: {x: -0, y: 0.00508, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
     - name: marsh_final_V03:Spine
       parentName: marsh_final_V03:Hips
       position: {x: -0, y: 0.006068, z: -0.001315}
-      rotation: {x: -0.077466846, y: -0.010307151, z: -0.023564762, w: 0.9966631}
+      rotation: {x: -0.07746686, y: -0.010307151, z: -0.023564765, w: 0.9966631}
       scale: {x: 1, y: 1, z: 1}
     - name: marsh_final_V03:Spine1
       parentName: marsh_final_V03:Spine
@@ -409,21 +459,6 @@ ModelImporter:
       parentName: marsh_final_V03:Spine1
       position: {x: -0, y: 0.0082789995, z: 0}
       rotation: {x: 0.009868061, y: -0.00007150153, z: -0.013938696, w: 0.9998542}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:Neck
-      parentName: marsh_final_V03:Spine2
-      position: {x: -0, y: 0.009314, z: 0}
-      rotation: {x: 0.15514101, y: 0.0012963235, z: -0.0038128986, w: 0.98788416}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:Head
-      parentName: marsh_final_V03:Neck
-      position: {x: -0, y: 0.006801, z: -0.00041799998}
-      rotation: {x: 0.04903358, y: 0.001081556, z: -0.00424516, w: 0.9987875}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:HeadTop_End
-      parentName: marsh_final_V03:Head
-      position: {x: -0, y: 0.030622998, z: -0.0018819999}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: marsh_final_V03:LeftShoulder
       parentName: marsh_final_V03:Spine2
@@ -445,26 +480,6 @@ ModelImporter:
       position: {x: -0, y: 0.014605, z: 0}
       rotation: {x: 0.026105946, y: -0.27002713, z: -0.04965521, w: 0.96121705}
       scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftHandThumb1
-      parentName: marsh_final_V03:LeftHand
-      position: {x: 0.001866, y: 0.0020909999, z: 0}
-      rotation: {x: -0.29982525, y: 0.14478001, z: -0.054311983, w: 0.94137865}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftHandThumb2
-      parentName: marsh_final_V03:LeftHandThumb1
-      position: {x: 0.000396, y: 0.0022069998, z: 0}
-      rotation: {x: 0.010599489, y: -0.098406665, z: -0.066674426, w: 0.99285364}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftHandThumb3
-      parentName: marsh_final_V03:LeftHandThumb2
-      position: {x: -0.000002, y: 0.003139, z: 0}
-      rotation: {x: -0.021821478, y: 0.06448643, z: -0.029109681, w: 0.99725527}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftHandThumb4
-      parentName: marsh_final_V03:LeftHandThumb3
-      position: {x: -0.000394, y: 0.0031339999, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: marsh_final_V03:LeftHandIndex1
       parentName: marsh_final_V03:LeftHand
       position: {x: -0, y: 0.0051289997, z: -0.000052999996}
@@ -483,6 +498,41 @@ ModelImporter:
     - name: marsh_final_V03:LeftHandIndex4
       parentName: marsh_final_V03:LeftHandIndex3
       position: {x: 0.00026499998, y: 0.002872, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb1
+      parentName: marsh_final_V03:LeftHand
+      position: {x: 0.001866, y: 0.0020909999, z: 0}
+      rotation: {x: -0.29982528, y: 0.14478001, z: -0.054311987, w: 0.94137865}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb2
+      parentName: marsh_final_V03:LeftHandThumb1
+      position: {x: 0.000396, y: 0.0022069998, z: 0}
+      rotation: {x: 0.010599489, y: -0.098406665, z: -0.066674426, w: 0.99285364}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb3
+      parentName: marsh_final_V03:LeftHandThumb2
+      position: {x: -0.000002, y: 0.003139, z: 0}
+      rotation: {x: -0.021821478, y: 0.06448643, z: -0.029109681, w: 0.99725527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb4
+      parentName: marsh_final_V03:LeftHandThumb3
+      position: {x: -0.000394, y: 0.0031339999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Neck
+      parentName: marsh_final_V03:Spine2
+      position: {x: -0, y: 0.009314, z: 0}
+      rotation: {x: 0.15514101, y: 0.0012963235, z: -0.0038128986, w: 0.98788416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Head
+      parentName: marsh_final_V03:Neck
+      position: {x: -0, y: 0.006801, z: -0.00041799998}
+      rotation: {x: 0.04903358, y: 0.001081556, z: -0.00424516, w: 0.9987875}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:HeadTop_End
+      parentName: marsh_final_V03:Head
+      position: {x: -0, y: 0.030622998, z: -0.0018819999}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: marsh_final_V03:RightShoulder
@@ -505,26 +555,6 @@ ModelImporter:
       position: {x: -0, y: 0.014605, z: 0}
       rotation: {x: 0.049527258, y: 0.3418263, z: 0.037811007, w: 0.93769515}
       scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightHandThumb1
-      parentName: marsh_final_V03:RightHand
-      position: {x: -0.0018629999, y: 0.002135, z: 0}
-      rotation: {x: -0.0312188, y: -0.066125385, z: -0.07457464, w: 0.9945308}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightHandThumb2
-      parentName: marsh_final_V03:RightHandThumb1
-      position: {x: -0.000253, y: 0.002252, z: 0}
-      rotation: {x: 0.015729614, y: 0.08098271, z: 0.060405258, w: 0.994759}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightHandThumb3
-      parentName: marsh_final_V03:RightHandThumb2
-      position: {x: 0.00016799998, y: 0.003259, z: 0}
-      rotation: {x: -0.021063222, y: -0.068603635, z: -0.041342903, w: 0.9965645}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightHandThumb4
-      parentName: marsh_final_V03:RightHandThumb3
-      position: {x: 0.000086, y: 0.002864, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
     - name: marsh_final_V03:RightHandIndex1
       parentName: marsh_final_V03:RightHand
       position: {x: -0, y: 0.0051349998, z: -0.000061}
@@ -545,54 +575,24 @@ ModelImporter:
       position: {x: -0.0001, y: 0.0028369997, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftUpLeg
-      parentName: marsh_final_V03:Hips
-      position: {x: -0.0061589996, y: -0.00337, z: -0.001798}
-      rotation: {x: -0.13678528, y: 0.078994684, z: 0.9846804, w: 0.07385224}
+    - name: marsh_final_V03:RightHandThumb1
+      parentName: marsh_final_V03:RightHand
+      position: {x: -0.0018629999, y: 0.002135, z: 0}
+      rotation: {x: -0.0312188, y: -0.066125385, z: -0.07457464, w: 0.9945308}
       scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftLeg
-      parentName: marsh_final_V03:LeftUpLeg
-      position: {x: -0, y: 0.028187, z: 0}
-      rotation: {x: -0.13614735, y: 0.013321631, z: -0.043265413, w: 0.98965377}
+    - name: marsh_final_V03:RightHandThumb2
+      parentName: marsh_final_V03:RightHandThumb1
+      position: {x: -0.000253, y: 0.002252, z: 0}
+      rotation: {x: 0.015729615, y: 0.080982715, z: 0.06040526, w: 0.9947591}
       scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftFoot
-      parentName: marsh_final_V03:LeftLeg
-      position: {x: -0, y: 0.027672, z: 0}
-      rotation: {x: 0.4690928, y: -0.020233976, z: 0.024115369, w: 0.8825876}
+    - name: marsh_final_V03:RightHandThumb3
+      parentName: marsh_final_V03:RightHandThumb2
+      position: {x: 0.00016799998, y: 0.003259, z: 0}
+      rotation: {x: -0.021063222, y: -0.068603635, z: -0.041342903, w: 0.9965645}
       scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftToeBase
-      parentName: marsh_final_V03:LeftFoot
-      position: {x: -0, y: 0.011381, z: 0}
-      rotation: {x: 0.35841691, y: 0.23404028, z: -0.07116323, w: 0.90094304}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:LeftToe_End
-      parentName: marsh_final_V03:LeftToeBase
-      position: {x: -0, y: 0.0050779996, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightUpLeg
-      parentName: marsh_final_V03:Hips
-      position: {x: 0.0061589996, y: -0.00337, z: -0.001877}
-      rotation: {x: 0.09110817, y: -0.0137313185, z: 0.99520195, w: 0.032921534}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightLeg
-      parentName: marsh_final_V03:RightUpLeg
-      position: {x: -0, y: 0.028183999, z: 0}
-      rotation: {x: -0.07950336, y: -0.08389576, z: 0.037304066, w: 0.9925972}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightFoot
-      parentName: marsh_final_V03:RightLeg
-      position: {x: -0, y: 0.027672999, z: 0}
-      rotation: {x: 0.5073138, y: 0.042846262, z: 0.008163198, w: 0.86065686}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightToeBase
-      parentName: marsh_final_V03:RightFoot
-      position: {x: -0, y: 0.011692, z: 0}
-      rotation: {x: 0.36833447, y: -0.24752025, z: 0.068359874, w: 0.893527}
-      scale: {x: 1, y: 1, z: 1}
-    - name: marsh_final_V03:RightToe_End
-      parentName: marsh_final_V03:RightToeBase
-      position: {x: -0, y: 0.00508, z: 0}
+    - name: marsh_final_V03:RightHandThumb4
+      parentName: marsh_final_V03:RightHandThumb3
+      position: {x: 0.000086, y: 0.002864, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
@@ -608,7 +608,7 @@ ModelImporter:
     hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  autoGenerateAvatarMappingIfUnspecified: 1
+  autoGenerateAvatarMappingIfUnspecified: 0
   animationType: 3
   humanoidOversampling: 1
   avatarSetup: 1

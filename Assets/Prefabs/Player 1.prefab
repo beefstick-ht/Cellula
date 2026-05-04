@@ -141,6 +141,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   canMove: 1
+  anim: {fileID: 7626815017816385015}
 --- !u!143 &1288787840836329663
 CharacterController:
   m_ObjectHideFlags: 0
@@ -239,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 8439005608958218381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalPosition: {x: 0, y: -1.032, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -353,6 +354,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: marshBase
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 36970c3ba923c144ab5ad61ecd8ee621, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c9295cd59f6a2c246a3482ce9b6d78d8, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 36970c3ba923c144ab5ad61ecd8ee621, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7951332784489085497, guid: 36970c3ba923c144ab5ad61ecd8ee621, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -365,5 +374,10 @@ PrefabInstance:
 --- !u!4 &4555337203486736269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 36970c3ba923c144ab5ad61ecd8ee621, type: 3}
+  m_PrefabInstance: {fileID: 4088554261662652518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7626815017816385015 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 36970c3ba923c144ab5ad61ecd8ee621, type: 3}
   m_PrefabInstance: {fileID: 4088554261662652518}
   m_PrefabAsset: {fileID: 0}

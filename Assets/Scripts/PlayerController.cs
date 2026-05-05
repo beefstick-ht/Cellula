@@ -46,14 +46,18 @@ public class PlayerController : MonoBehaviour
         //both forward/backward and left/right rotations trigger movement
         float moveAmount = Mathf.Abs(verticalInput);
         float turnAmount = Mathf.Abs(horizontalInput);
-        float totalActivity = Mathf.Max(moveAmount, turnAmount);
+        //float totalActivity = Mathf.Max(moveAmount, turnAmount);
 
         // this sends a value of 2.0 if sprinting, otherwise it sends the raw vertical input (0 to 1)
-        float animationValue = (isSprinting && verticalInput > 0) ? 2.0f : totalActivity;
+        float animationValue = (isSprinting && verticalInput > 0) ? 2.0f : moveAmount;
+     
         if (anim != null)
         {
             anim.SetFloat("Speed", animationValue);  //changes anim based on speed
+            anim.SetFloat("Turn", horizontalInput); //changes based on turn
         }
+        Debug.Log($"movement: {anim.GetFloat("Speed")}");
+        Debug.Log($"turn: {anim.GetFloat("Turn")}");
 
         float rotate = horizontalInput * rotateSpeed * Time.deltaTime;
         float move = verticalInput * currentSpeed * Time.deltaTime;
@@ -65,7 +69,9 @@ public class PlayerController : MonoBehaviour
 
     private void CheckIsGrounded()
     {
+
         isGrounded = Physics.CheckSphere(feet.position, groundCheckRadius, groundLayer, QueryTriggerInteraction.Ignore);
+        //fix the physics
     }
     private void ApplyGravity()
     {

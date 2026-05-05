@@ -109,7 +109,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   canMove: 1
-  anim: {fileID: 5866666021909216657, guid: 36970c3ba923c144ab5ad61ecd8ee621, type: 3}
+  anim: {fileID: 6601429473900498643}
 --- !u!143 &1288787840836329663
 CharacterController:
   m_ObjectHideFlags: 0

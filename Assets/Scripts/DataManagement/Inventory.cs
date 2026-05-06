@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
 
     [Header("UI Reference")]
     public GameObject inventoryMenu;
+    public GameObject blurVolume; //blue
     private bool isMenuOpen = false;
 
     [Header("Item Tracking")]
@@ -39,10 +40,15 @@ public class Inventory : MonoBehaviour
         isMenuOpen = !isMenuOpen;
         inventoryMenu.SetActive(isMenuOpen);
 
-     //freezes time when menu is open
-        Time.timeScale = isMenuOpen ? 0 : 1;
-        Cursor.lockState = isMenuOpen ? CursorLockMode.None : CursorLockMode.Locked;
+        // turns the extra blurring camera on/off
+        if (blurVolume != null)
+        {
+            blurVolume.SetActive(isMenuOpen);
+        }
+
+        Time.timeScale = isMenuOpen ? 0 : 1; //freeze time
     }
+
     public bool HasItem(string itemID)
     {
         return items.Contains(itemID);

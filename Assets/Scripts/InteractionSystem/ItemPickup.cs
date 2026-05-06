@@ -5,6 +5,7 @@ public class ItemPickup : MonoBehaviour, IInteractable
 {
     [SerializeField] private string itemID;
     [SerializeField] private string itemName = "";
+    public QuestData questData;
 
     public string DisplayName => itemName;
     public string InteractionPrompt => "Pick up " + itemName;
@@ -21,14 +22,14 @@ public class ItemPickup : MonoBehaviour, IInteractable
 
     private void Start()
     {
-        // check if player already has this specific item
-        if (Inventory.instance != null && Inventory.instance.HasItem(itemID))
+        // of this items id is marked as complete in our data asset, vanish immediately
+        if (questData.isQuestComplete && itemID == "YourSpecificItemID")
         {
             gameObject.SetActive(false);
         }
     }
 
-    public bool CanInteract() => true;
+public bool CanInteract() => true;
 
     public void Interact()
     {

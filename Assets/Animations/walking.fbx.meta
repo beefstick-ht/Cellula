@@ -1,0 +1,621 @@
+fileFormatVersion: 2
+guid: d24a061732ce05a47a6c6112a3fcbc5a
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: <Root Transform>
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: mixamo.com
+      takeName: mixamo.com
+      internalID: -203655887218126122
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: marsh_final_V03:Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHandIndex1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHandIndex2
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHandIndex3
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHandThumb1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHandThumb2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:LeftHandThumb3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHandThumb1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHandThumb2
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHandThumb3
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHandIndex1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHandIndex2
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:RightHandIndex3
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: marsh_final_V03:Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: walking(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Hips
+      parentName: walking(Clone)
+      position: {x: -0.00007417683, y: 0.06562397, z: 0.0018403592}
+      rotation: {x: 0.01697181, y: -0.016783059, z: -0.0011109844, w: 0.9997145}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Spine
+      parentName: marsh_final_V03:Hips
+      position: {x: -0, y: 0.006068, z: -0.001315}
+      rotation: {x: -0.05282386, y: 0.010868411, z: 0.0036077905, w: 0.9985382}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Spine1
+      parentName: marsh_final_V03:Spine
+      position: {x: -0, y: 0.0072439997, z: 0}
+      rotation: {x: 0.021565793, y: 0.023035103, z: -0.005537132, w: 0.99948674}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Spine2
+      parentName: marsh_final_V03:Spine1
+      position: {x: -0, y: 0.0082789995, z: 0}
+      rotation: {x: 0.021317365, y: 0.022881309, z: -0.0065631503, w: 0.99948937}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Neck
+      parentName: marsh_final_V03:Spine2
+      position: {x: -0, y: 0.009314, z: 0}
+      rotation: {x: 0.10227905, y: -0.018693933, z: 0.00015987293, w: 0.9945801}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:Head
+      parentName: marsh_final_V03:Neck
+      position: {x: -0, y: 0.006801, z: -0.00041799998}
+      rotation: {x: -0.004057145, y: -0.018659305, z: 0.0019652601, w: 0.99981576}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:HeadTop_End
+      parentName: marsh_final_V03:Head
+      position: {x: -0, y: 0.030622998, z: -0.0018819999}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftShoulder
+      parentName: marsh_final_V03:Spine2
+      position: {x: -0.0052969996, y: 0.007865, z: -0.000313}
+      rotation: {x: 0.6000895, y: -0.3990633, z: 0.55332476, w: 0.41769958}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftArm
+      parentName: marsh_final_V03:LeftShoulder
+      position: {x: -0, y: 0.011519, z: 0}
+      rotation: {x: -0.11067984, y: -0.389132, z: 0.10653334, w: 0.90828246}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftForeArm
+      parentName: marsh_final_V03:LeftArm
+      position: {x: -0, y: 0.017198, z: 0}
+      rotation: {x: -0.0093727, y: 0.0012520845, z: -0.030096758, w: 0.9995023}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHand
+      parentName: marsh_final_V03:LeftForeArm
+      position: {x: -0, y: 0.014605, z: 0}
+      rotation: {x: 0.09671329, y: -0.55270475, z: -0.02764768, w: 0.8272845}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb1
+      parentName: marsh_final_V03:LeftHand
+      position: {x: 0.001866, y: 0.0020909999, z: 0}
+      rotation: {x: -0.051153585, y: 0.009754624, z: 0.11188515, w: 0.9923557}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb2
+      parentName: marsh_final_V03:LeftHandThumb1
+      position: {x: 0.000396, y: 0.0022069998, z: 0}
+      rotation: {x: 0.022947913, y: -0.051509995, z: -0.06180185, w: 0.9964942}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb3
+      parentName: marsh_final_V03:LeftHandThumb2
+      position: {x: -0.000002, y: 0.003139, z: 0}
+      rotation: {x: -0.013553461, y: -0.12868142, z: -0.03330788, w: 0.9910338}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandThumb4
+      parentName: marsh_final_V03:LeftHandThumb3
+      position: {x: -0.000394, y: 0.0031339999, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandIndex1
+      parentName: marsh_final_V03:LeftHand
+      position: {x: -0, y: 0.0051289997, z: -0.000052999996}
+      rotation: {x: -0.019368237, y: 0.019388843, z: 0.006335669, w: 0.9996043}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandIndex2
+      parentName: marsh_final_V03:LeftHandIndex1
+      position: {x: -0.000078, y: 0.0037099998, z: 0}
+      rotation: {x: 0.015950223, y: -0.0011329667, z: -0.05308889, w: 0.9984618}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandIndex3
+      parentName: marsh_final_V03:LeftHandIndex2
+      position: {x: -0.000187, y: 0.003088, z: 0}
+      rotation: {x: 0.015697295, y: -0.002916066, z: 0.042767625, w: 0.99895746}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftHandIndex4
+      parentName: marsh_final_V03:LeftHandIndex3
+      position: {x: 0.00026499998, y: 0.002872, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightShoulder
+      parentName: marsh_final_V03:Spine2
+      position: {x: 0.0052969996, y: 0.007865, z: -0.000315}
+      rotation: {x: 0.572609, y: 0.42330995, z: -0.5667956, w: 0.41433108}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightArm
+      parentName: marsh_final_V03:RightShoulder
+      position: {x: -0, y: 0.011519, z: 0}
+      rotation: {x: -0.14854383, y: 0.28455797, z: -0.023122847, w: 0.94679815}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightForeArm
+      parentName: marsh_final_V03:RightArm
+      position: {x: -0, y: 0.017201, z: 0}
+      rotation: {x: -0.012665674, y: -0.0027294457, z: 0.02415701, w: 0.99962425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHand
+      parentName: marsh_final_V03:RightForeArm
+      position: {x: -0, y: 0.014605, z: 0}
+      rotation: {x: 0.041302312, y: 0.49128178, z: 0.034670807, w: 0.8693298}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandThumb1
+      parentName: marsh_final_V03:RightHand
+      position: {x: -0.0018629999, y: 0.002135, z: 0}
+      rotation: {x: -0.3377781, y: -0.059019014, z: -0.057917856, w: 0.9375864}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandThumb2
+      parentName: marsh_final_V03:RightHandThumb1
+      position: {x: -0.000253, y: 0.002252, z: 0}
+      rotation: {x: 0.0225937, y: 0.005022878, z: 0.05618623, w: 0.998152}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandThumb3
+      parentName: marsh_final_V03:RightHandThumb2
+      position: {x: 0.00016799998, y: 0.003259, z: 0}
+      rotation: {x: -0.024523664, y: -0.06751567, z: -0.038920157, w: 0.99665713}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandThumb4
+      parentName: marsh_final_V03:RightHandThumb3
+      position: {x: 0.000086, y: 0.002864, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandIndex1
+      parentName: marsh_final_V03:RightHand
+      position: {x: -0, y: 0.0051349998, z: -0.000061}
+      rotation: {x: 0.01589805, y: -0.013723312, z: 0.01078947, w: 0.9997213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandIndex2
+      parentName: marsh_final_V03:RightHandIndex1
+      position: {x: 0.000017999999, y: 0.003551, z: 0}
+      rotation: {x: 0.015656324, y: 0.00009893438, z: 0.040027145, w: 0.99907595}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandIndex3
+      parentName: marsh_final_V03:RightHandIndex2
+      position: {x: 0.000082, y: 0.0030579998, z: 0}
+      rotation: {x: 0.01843507, y: 0.00032793067, z: 0.0033910722, w: 0.9998242}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightHandIndex4
+      parentName: marsh_final_V03:RightHandIndex3
+      position: {x: -0.0001, y: 0.0028369997, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftUpLeg
+      parentName: marsh_final_V03:Hips
+      position: {x: -0.0061589996, y: -0.00337, z: -0.001798}
+      rotation: {x: -0.092063814, y: 0.14012519, z: 0.98564595, w: 0.019778593}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftLeg
+      parentName: marsh_final_V03:LeftUpLeg
+      position: {x: -0, y: 0.028187, z: 0}
+      rotation: {x: -0.3416572, y: -0.046132077, z: -0.0026791564, w: 0.9386879}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftFoot
+      parentName: marsh_final_V03:LeftLeg
+      position: {x: -0, y: 0.027672, z: 0}
+      rotation: {x: 0.39911798, y: 0.014684662, z: -0.026288567, w: 0.916405}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftToeBase
+      parentName: marsh_final_V03:LeftFoot
+      position: {x: -0, y: 0.011381, z: 0}
+      rotation: {x: 0.38344806, y: 0.23978002, z: -0.066149935, w: 0.88943654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:LeftToe_End
+      parentName: marsh_final_V03:LeftToeBase
+      position: {x: -0, y: 0.0050779996, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightUpLeg
+      parentName: marsh_final_V03:Hips
+      position: {x: 0.0061589996, y: -0.00337, z: -0.001877}
+      rotation: {x: 0.06252294, y: 0.10656118, z: 0.9921031, w: 0.021612654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightLeg
+      parentName: marsh_final_V03:RightUpLeg
+      position: {x: -0, y: 0.028183999, z: 0}
+      rotation: {x: -0.18774347, y: 0.028858332, z: 0.03220629, w: 0.9812657}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightFoot
+      parentName: marsh_final_V03:RightLeg
+      position: {x: -0, y: 0.027672999, z: 0}
+      rotation: {x: 0.5422793, y: -0.03726724, z: 0.059922233, w: 0.8372297}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightToeBase
+      parentName: marsh_final_V03:RightFoot
+      position: {x: -0, y: 0.011692, z: 0}
+      rotation: {x: 0.35058683, y: -0.24354781, z: 0.072025165, w: 0.90143543}
+      scale: {x: 1, y: 1, z: 1}
+    - name: marsh_final_V03:RightToe_End
+      parentName: marsh_final_V03:RightToeBase
+      position: {x: -0, y: 0.00508, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

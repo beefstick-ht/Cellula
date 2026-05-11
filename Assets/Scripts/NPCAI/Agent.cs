@@ -17,7 +17,7 @@ public class Agent : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+   /* void Update()
     {
         switch (state)
         {
@@ -28,7 +28,7 @@ public class Agent : MonoBehaviour
                 Stalk();
                 break;
         }
-    }
+    }*/
     public void Stalk()
     {
         harpie.SetDestination(player.position);

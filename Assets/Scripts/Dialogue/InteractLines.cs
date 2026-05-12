@@ -20,7 +20,7 @@ public class InteractLines : MonoBehaviour, IInteractable
     public static bool IsInDialogue { get; private set; }
     private bool isLocked = false;//prevents reopening during cooldown
 
-
+    private bool doorOpen;
     [Header("NPC Lines")]
     [TextArea] public string[] interactionLines; // Talk for the first time
 
@@ -38,9 +38,15 @@ public class InteractLines : MonoBehaviour, IInteractable
         outline.OutlineColor = Color.yellow;
         outline.OutlineWidth = 5f;
         outline.enabled = false;
+        doorOpen = false;
     }
 
-    public bool CanInteract() => !typing; //if alr talking cannot talk
+    public void OnDoorOpen()
+    {
+        doorOpen = true;
+    }
+
+    public bool CanInteract() => !typing && !isLocked && doorOpen; //if alr talking cannot talk
 
     public void Interact() => StartDialogue();
 
@@ -75,11 +81,11 @@ public class InteractLines : MonoBehaviour, IInteractable
         }
     }
     // this is called by Interactor script
-    public bool Interact(Interactor interactor)
+   /* public bool Interact(Interactor interactor)
     {
         StartDialogue();
         return true;
-    }
+    }*/
 
     public void StartDialogue()
     {

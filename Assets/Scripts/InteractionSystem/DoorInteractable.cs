@@ -1,8 +1,11 @@
 using UnityEngine;
 using QuickOutline;
+using UnityEngine.Events;
 
 public class DoorInteractable : MonoBehaviour, IInteractable
 {
+    public UnityEvent onDoorOpen; 
+
     [SerializeField] private bool isLocked = false;
     [SerializeField] private string requiredItemID = ""; //specific key used to unlock door using id
     [SerializeField] private Animator doorAnimator;
@@ -83,6 +86,10 @@ public class DoorInteractable : MonoBehaviour, IInteractable
         if (levelTransition != null)
         {
             levelTransition.enabled = true;
+        }
+        if(onDoorOpen != null)
+        {
+            onDoorOpen.Invoke();
         }
     }
 }

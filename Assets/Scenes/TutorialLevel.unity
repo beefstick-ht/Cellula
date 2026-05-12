@@ -1789,6 +1789,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379aa8f4bcd6e5e4983ff9fdbd3f7ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
+  onDoorOpen:
+    m_PersistentCalls:
+      m_Calls: []
   isLocked: 0
   requiredItemID: 
   doorAnimator: {fileID: 1482491905}
@@ -5273,8 +5276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624982029}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.05908239, y: -0.70436585, z: 0.049833268, w: -0.7056166}
-  m_LocalPosition: {x: 5.602073, y: 5.3620157, z: 54.912907}
+  m_LocalRotation: {x: -0.08534881, y: 0.89470464, z: -0.19435897, w: -0.39299345}
+  m_LocalPosition: {x: 6.9552045, y: 3.9189138, z: -20.097012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8670,7 +8673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1020036497
 Camera:
   m_ObjectHideFlags: 0
@@ -12175,51 +12178,55 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1741936643}
     m_Modifications:
     - target: {fileID: 3010998366461334162, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_Name
       value: Painting
       objectReference: {fileID: 0}
+    - target: {fileID: 3010998366461334162, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalScale.x
-      value: 12.914064
+      value: 0.095405295
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalScale.y
-      value: 12.914064
+      value: 0.0954053
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalScale.z
-      value: 12.914064
+      value: 0.095405295
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.261
+      value: -0.0017511083
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.007
+      value: -0.00022834621
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.299
+      value: -0.0002002092
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: -0.6915154
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.54453224
+      value: 0.6917568
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.14707816
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.83873993
+      value: -0.14712954
       objectReference: {fileID: 0}
     - target: {fileID: 8375584892645272422, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12243,6 +12250,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3010998366461334162, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1436658569}
+    - targetCorrespondingSourceObject: {fileID: 3010998366461334162, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1436658572}
   m_SourcePrefab: {fileID: 100100000, guid: 65b24b440e8745745bce7ba4af5af109, type: 3}
 --- !u!1 &1436658567 stripped
 GameObject:
@@ -12275,6 +12285,27 @@ MonoBehaviour:
   - You remember that trip. It was... odd. The two of you aren't very close in the
     photo.
   npcName: Family Photo
+--- !u!65 &1436658572
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436658567}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.020000001, y: 0.0012786795, z: 0.020616112}
+  m_Center: {x: -0.00000023845405, y: 0.0007851605, z: 0.00003746152}
 --- !u!1 &1448506478 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9060732772746927704, guid: 540be87b22644ba478e80c0701fff7da, type: 3}
@@ -14732,7 +14763,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1f046f5b879b5724cb3b1448e4168cee, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2084053774082714528, guid: 4d77a57239cddd74ca7db292170f6f6b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1436658568}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3726737965501745885, guid: 4d77a57239cddd74ca7db292170f6f6b, type: 3}
       insertIndex: -1
@@ -14818,6 +14852,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379aa8f4bcd6e5e4983ff9fdbd3f7ca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DoorInteractable
+  onDoorOpen:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1436658569}
+        m_TargetAssemblyTypeName: InteractLines, Assembly-CSharp
+        m_MethodName: OnDoorOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isLocked: 0
   requiredItemID: 
   doorAnimator: {fileID: 1741936634}
@@ -14848,6 +14897,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0084535135, y: 0.00547871, z: 0.0025489787}
   m_Center: {x: 0.0000031245877, y: -9.433924e-10, z: 0.00040460078}
+--- !u!4 &1741936643 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2084053774082714528, guid: 4d77a57239cddd74ca7db292170f6f6b, type: 3}
+  m_PrefabInstance: {fileID: 1741936630}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1767405490 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7719238022364675483, guid: 524f88b6c5575b74f9614510d10c942c, type: 3}
@@ -16979,4 +17033,3 @@ SceneRoots:
   - {fileID: 1415704731}
   - {fileID: 232207066}
   - {fileID: 323540443}
-  - {fileID: 1436658566}

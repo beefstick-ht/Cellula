@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Agent : MonoBehaviour
+public class NPCWalk : MonoBehaviour
 {
     public enum EnemyState 
     { 
@@ -19,7 +19,6 @@ public class Agent : MonoBehaviour
     NavMeshAgent harpie;
     public float speed;
     public bool isStunned;
-    public Animator anim;
 
 
 
@@ -67,7 +66,7 @@ public class Agent : MonoBehaviour
     {
         if (isStunned == false)
         {
-            StartCoroutine(Stun());
+
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -91,35 +90,4 @@ public class Agent : MonoBehaviour
         state = EnemyState.Stunned;
     }
 
-    IEnumerator Stun()
-    {
-        Debug.Log("I'm stunned");
-        isStunned = true;
-        harpie.speed = 0f;
-        //play the cool animation
-        yield return new WaitForSeconds(5f);
-        harpie.speed = 3.5f;
-        
-        isStunned = false;
-        Collider[] hits = Physics.OverlapSphere(transform.position, GetComponent<SphereCollider>().radius);
-        //search whole sphere if player's there
-        bool chasePlayer = false;
-        foreach (Collider hit in hits) 
-        {
-            if(hit.tag == "Player")
-            {
-                chasePlayer = true;
-            }
-
-        }
-        if (chasePlayer == true)
-        {
-            state = EnemyState.Stalk;
-        }
-        else
-        {
-            state = EnemyState.Roam;
-        }
-
-    }
 }

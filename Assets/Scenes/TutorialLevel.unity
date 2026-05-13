@@ -589,13 +589,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stove
       objectReference: {fileID: 0}
+    - target: {fileID: 5025894405820296698, guid: 45ffcf49313d7e64ba14a5f683c8db30, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5025894405820296698, guid: 45ffcf49313d7e64ba14a5f683c8db30, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2010837205}
+      addedObject: {fileID: 2010837206}
+    - targetCorrespondingSourceObject: {fileID: 5025894405820296698, guid: 45ffcf49313d7e64ba14a5f683c8db30, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2010837209}
   m_SourcePrefab: {fileID: 100100000, guid: 45ffcf49313d7e64ba14a5f683c8db30, type: 3}
 --- !u!4 &92267177 stripped
 Transform:
@@ -701,7 +708,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -5.0043945, y: -15.295044}
+  m_AnchoredPosition: {x: -5.0043945, y: -15.295105}
   m_SizeDelta: {x: -34.913, y: -1120.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &102539074
@@ -923,7 +930,7 @@ GameObject:
   - component: {fileID: 108811930}
   - component: {fileID: 108811929}
   m_Layer: 0
-  m_Name: CameraTrigger (8)
+  m_Name: FrontDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -938,12 +945,12 @@ Transform:
   m_GameObject: {fileID: 108811927}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 3.81, y: -1.15851, z: -20.68}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: 0.27729988, y: 0.61201, z: 5.11613}
+  m_LocalScale: {x: 0.8597492, y: 1, z: 0.6551259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1574931457}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &108811929
 BoxCollider:
@@ -1620,7 +1627,7 @@ GameObject:
   - component: {fileID: 191318875}
   - component: {fileID: 191318874}
   m_Layer: 0
-  m_Name: CameraTrigger (4)
+  m_Name: DiningTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1635,12 +1642,12 @@ Transform:
   m_GameObject: {fileID: 191318872}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 4.429, y: -1.15851, z: -27.03}
-  m_LocalScale: {x: 0.77457726, y: 0.6818, z: 0.41282997}
+  m_LocalPosition: {x: 0.89629984, y: 0.61201, z: -1.2338705}
+  m_LocalScale: {x: 0.77457744, y: 0.6818, z: 0.4128301}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1111310743}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &191318874
 BoxCollider:
@@ -2486,19 +2493,6 @@ Transform:
   - {fileID: 222616721}
   - {fileID: 862879206}
   - {fileID: 1029137145}
-  - {fileID: 781010976}
-  - {fileID: 411848131}
-  - {fileID: 2013356289}
-  - {fileID: 974052533}
-  - {fileID: 108811928}
-  - {fileID: 1286754138}
-  - {fileID: 2023602794}
-  - {fileID: 191318873}
-  - {fileID: 775819965}
-  - {fileID: 1638609760}
-  - {fileID: 397871965}
-  - {fileID: 2117286352}
-  - {fileID: 1267184643}
   - {fileID: 1482491906}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2898,81 +2892,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceeb31d1ee74c26488ef664b388c3d0e, type: 3}
---- !u!1 &353216214
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 353216215}
-  - component: {fileID: 353216216}
-  m_Layer: 0
-  m_Name: CinemachineCamera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &353216215
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353216214}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.03393664, y: -0.7053795, z: 0.03264646, w: 0.70726407}
-  m_LocalPosition: {x: 7.9809012, y: 5.3684077, z: 16.578722}
-  m_LocalScale: {x: 3.01858, y: 1.537148, z: 1.0430871}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1267184643}
-  m_LocalEulerAnglesHint: {x: 9.588, y: 103.616, z: -0.118}
---- !u!114 &353216216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353216214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
-  Priority:
-    Enabled: 0
-    m_Value: 0
-  OutputChannel: 1
-  StandbyUpdate: 2
-  m_StreamingVersion: 20241001
-  m_LegacyPriority: 0
-  Target:
-    TrackingTarget: {fileID: 3891319189180270957, guid: 9c72ff883848eb643b7f2c76e9a743d2, type: 3}
-    LookAtTarget: {fileID: 0}
-    CustomLookAtTarget: 0
-  Lens:
-    FieldOfView: 66.90991
-    OrthographicSize: 5
-    NearClipPlane: 0.3
-    FarClipPlane: 1000
-    Dutch: 0
-    ModeOverride: 0
-    PhysicalProperties:
-      GateFit: 2
-      SensorSize: {x: 21.946, y: 16.002}
-      LensShift: {x: 0, y: 0}
-      FocusDistance: 10
-      Iso: 200
-      ShutterSpeed: 0.005
-      Aperture: 16
-      BladeCount: 5
-      Curvature: {x: 2, y: 11}
-      BarrelClipping: 0.25
-      Anamorphism: 0
-  BlendHint: 0
 --- !u!4 &358411944 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 690459846787794995, guid: c30bda5ec1efa934b87dd8b1a85481b2, type: 3}
@@ -3180,6 +3099,49 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de6d28a2c2ffe4043a7520bb48d8f50d, type: 3}
+--- !u!1 &367090094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367090095}
+  m_Layer: 0
+  m_Name: Cameras
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &367090095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367090094}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.03269, y: -0.00001, z: -15.84854}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 781010976}
+  - {fileID: 411848131}
+  - {fileID: 2013356289}
+  - {fileID: 974052533}
+  - {fileID: 108811928}
+  - {fileID: 1286754138}
+  - {fileID: 2023602794}
+  - {fileID: 191318873}
+  - {fileID: 775819965}
+  - {fileID: 1638609760}
+  - {fileID: 397871965}
+  - {fileID: 2117286352}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &397871964
 GameObject:
   m_ObjectHideFlags: 0
@@ -3208,12 +3170,12 @@ Transform:
   m_GameObject: {fileID: 397871964}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 5.06, y: 1.53, z: -36.55}
-  m_LocalScale: {x: 0.7026389, y: 0.63231, z: 0.501275}
+  m_LocalPosition: {x: 1.5272999, y: 3.30052, z: -10.753869}
+  m_LocalScale: {x: 0.7026391, y: 0.63231, z: 0.501275}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 760067470}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &397871966
 BoxCollider:
@@ -3416,12 +3378,12 @@ Transform:
   m_GameObject: {fileID: 411848130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.8267089, z: -0, w: 0.56262994}
-  m_LocalPosition: {x: 4.9, y: -1.15851, z: 32.7}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: 1.3673, y: 0.61201, z: 58.49613}
+  m_LocalScale: {x: 0.8597491, y: 1, z: 0.655126}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1069554071}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 111.524, z: 0}
 --- !u!65 &411848132
 BoxCollider:
@@ -5278,7 +5240,7 @@ Transform:
   m_GameObject: {fileID: 624982029}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08534881, y: 0.89470464, z: -0.19435897, w: -0.39299345}
-  m_LocalPosition: {x: 6.9552045, y: 3.9189138, z: -20.097012}
+  m_LocalPosition: {x: 6.955205, y: 3.9189138, z: -20.097012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6673,7 +6635,7 @@ GameObject:
   - component: {fileID: 775819966}
   - component: {fileID: 775819968}
   m_Layer: 0
-  m_Name: CameraTrigger (5)
+  m_Name: Kitchen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6688,12 +6650,12 @@ Transform:
   m_GameObject: {fileID: 775819964}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: -2.68, y: -1.15851, z: -29.488}
-  m_LocalScale: {x: 0.7026389, y: 0.63231, z: 0.501275}
+  m_LocalPosition: {x: -6.2127, y: 0.61201, z: -3.6918707}
+  m_LocalScale: {x: 0.7026391, y: 0.63231, z: 0.501275}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1857038434}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &775819966
 BoxCollider:
@@ -6792,12 +6754,12 @@ Transform:
   m_GameObject: {fileID: 781010973}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 6.2600102, y: -1.15851, z: -0.74}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: 2.7273102, y: 0.61201, z: 25.05613}
+  m_LocalScale: {x: 0.8597492, y: 1, z: 0.6551259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1284831276}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &781010977
 BoxCollider:
@@ -7475,6 +7437,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kitchen
       objectReference: {fileID: 0}
+    - target: {fileID: 7296454991313894461, guid: cf764d5e6c4687f498a952c4bffc5350, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7482,12 +7448,35 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7296454991313894461, guid: cf764d5e6c4687f498a952c4bffc5350, type: 3}
       insertIndex: -1
       addedObject: {fileID: 781317389}
+    - targetCorrespondingSourceObject: {fileID: 7296454991313894461, guid: cf764d5e6c4687f498a952c4bffc5350, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 851614394}
   m_SourcePrefab: {fileID: 100100000, guid: cf764d5e6c4687f498a952c4bffc5350, type: 3}
 --- !u!4 &851614393 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 581025155671850422, guid: cf764d5e6c4687f498a952c4bffc5350, type: 3}
   m_PrefabInstance: {fileID: 851614392}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &851614394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781317385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8a418e98246f469ab19bf7ecb5439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractLines
+  text: {fileID: 1015296734}
+  dialogueBox: {fileID: 1031431018}
+  dialogueCam: {fileID: 1020036497}
+  textSpeed: 0.05
+  interactionLines:
+  - 'The cabinets house nothing new. Mostly cleaning supplies and now stale loaves
+    of bread. '
+  npcName: Kitchen Cabinets
 --- !u!1 &853817811
 GameObject:
   m_ObjectHideFlags: 0
@@ -7899,7 +7888,7 @@ GameObject:
   - component: {fileID: 974052534}
   - component: {fileID: 974052536}
   m_Layer: 0
-  m_Name: CameraTrigger (3)
+  m_Name: Livingroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7914,12 +7903,12 @@ Transform:
   m_GameObject: {fileID: 974052532}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 6.2600102, y: -1.15851, z: -20.68}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: 2.7273102, y: 0.61201, z: 5.11613}
+  m_LocalScale: {x: 0.8597492, y: 1, z: 0.6551259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1685821814}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &974052534
 BoxCollider:
@@ -9371,6 +9360,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: c5c9362bdba05134bbcf47a341372529, type: 2}
+    - target: {fileID: 3813968421981893656, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4741470125004377188, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -9434,12 +9427,65 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1124234177941873200, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4830132}
+    - targetCorrespondingSourceObject: {fileID: 3813968421981893656, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1084852339}
+    - targetCorrespondingSourceObject: {fileID: 3813968421981893656, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1084852343}
   m_SourcePrefab: {fileID: 100100000, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
 --- !u!4 &1084852337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6726368681976244589, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
   m_PrefabInstance: {fileID: 1084852336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1084852338 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3813968421981893656, guid: dc31a3650105cd9468056903ffd77e7e, type: 3}
+  m_PrefabInstance: {fileID: 1084852336}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1084852339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084852338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8a418e98246f469ab19bf7ecb5439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractLines
+  text: {fileID: 1015296734}
+  dialogueBox: {fileID: 1031431018}
+  dialogueCam: {fileID: 1020036497}
+  textSpeed: 0.05
+  interactionLines:
+  - 'You go to open the fridge, but stop yourself. Somehow, you feel your Grandpa''s
+    eyes drill into the back of your head. '
+  - 'The whispers of a foul, rusty smell assault your nose just behind the door. '
+  npcName: Fridge
+--- !u!65 &1084852343
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084852338}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0028526853, y: 0.009215898, z: 0.013961182}
+  m_Center: {x: -0.0001000383, y: -0.004595486, z: -0.00036798036}
 --- !u!1 &1093066998
 GameObject:
   m_ObjectHideFlags: 0
@@ -10601,75 +10647,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 59959752}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1267184642
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1267184643}
-  - component: {fileID: 1267184645}
-  - component: {fileID: 1267184644}
-  m_Layer: 0
-  m_Name: Bathroom
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1267184643
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267184642}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 3.683, y: 2.45, z: -29.815}
-  m_LocalScale: {x: 0.7026389, y: 0.63231, z: 0.26953363}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 353216215}
-  m_Father: {fileID: 296972581}
-  m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
---- !u!65 &1267184644
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267184642}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 6.255024, y: 1, z: 9.036552}
-  m_Center: {x: 2.8168745, y: 3.37, z: 16.011665}
---- !u!114 &1267184645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267184642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0f6c7e94a033c94c9b747ab32aae6f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraSwitcher
-  player: {fileID: 4916300987134205, guid: eb6294d02ce48a042b0a3ffa62d9330a, type: 3}
-  activeCam: {fileID: 353216216}
 --- !u!4 &1269470214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7131328114860747472, guid: 74ed88c21bc7e9344a448a229f9aa185, type: 3}
@@ -10842,7 +10819,7 @@ GameObject:
   - component: {fileID: 1286754140}
   - component: {fileID: 1286754139}
   m_Layer: 0
-  m_Name: CameraTrigger (10)
+  m_Name: FrontDoor(Outside)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10857,12 +10834,12 @@ Transform:
   m_GameObject: {fileID: 1286754137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 3.81, y: -1.15851, z: -16.12}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: 0.27729988, y: 0.61201, z: 9.676129}
+  m_LocalScale: {x: 0.8597492, y: 1, z: 0.6551259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 560985640}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &1286754139
 BoxCollider:
@@ -13786,7 +13763,7 @@ GameObject:
   - component: {fileID: 1638609762}
   - component: {fileID: 1638609761}
   m_Layer: 0
-  m_Name: CameraTrigger (6)
+  m_Name: DrawerUpstairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13801,12 +13778,12 @@ Transform:
   m_GameObject: {fileID: 1638609759}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: -10.57, y: 4.53, z: -36.394}
-  m_LocalScale: {x: 0.43143865, y: 0.63231, z: 0.89692765}
+  m_LocalPosition: {x: -14.102699, y: 6.3005204, z: -10.597871}
+  m_LocalScale: {x: 0.4314388, y: 0.63231, z: 0.8969279}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 112299785}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &1638609761
 BoxCollider:
@@ -14591,12 +14568,37 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8af9835e72f542643b3b2f66c364380c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 269960305}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8af9835e72f542643b3b2f66c364380c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1736103748}
   m_SourcePrefab: {fileID: 100100000, guid: 8af9835e72f542643b3b2f66c364380c, type: 3}
 --- !u!4 &1736103747 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8af9835e72f542643b3b2f66c364380c, type: 3}
   m_PrefabInstance: {fileID: 1736103746}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1736103748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269960303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8a418e98246f469ab19bf7ecb5439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractLines
+  text: {fileID: 1015296734}
+  dialogueBox: {fileID: 1031431018}
+  dialogueCam: {fileID: 1020036497}
+  textSpeed: 0.05
+  interactionLines:
+  - You go up to the radio, its tunes interrupted by a broadcast.
+  - '"As a reminder to the lovely folks of Cellule, don''t forget to keep your plans
+    open this September!'
+  - 'A very special someone''s having a birthday bash, '
+  npcName: Radio
 --- !u!1001 &1741030901
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16260,8 +16262,27 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5025894405820296698, guid: 45ffcf49313d7e64ba14a5f683c8db30, type: 3}
   m_PrefabInstance: {fileID: 92267176}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &2010837205
-MeshCollider:
+--- !u!114 &2010837206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2010837201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d8a418e98246f469ab19bf7ecb5439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractLines
+  text: {fileID: 1015296734}
+  dialogueBox: {fileID: 1031431018}
+  dialogueCam: {fileID: 1020036497}
+  textSpeed: 0.05
+  interactionLines:
+  - Thankfully, the oven's off.
+  npcName: Oven
+--- !u!65 &2010837209
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16278,10 +16299,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6074028379145110453, guid: e6df75b4c01223d47880b38e2df16f6a, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 0.017396966, y: 0.020000005, z: 0.027630862}
+  m_Center: {x: -0.0003579566, y: 0, z: 0.000744363}
 --- !u!1 &2013356288
 GameObject:
   m_ObjectHideFlags: 0
@@ -16309,12 +16329,12 @@ Transform:
   m_GameObject: {fileID: 2013356288}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.94965106, z: -0, w: 0.31330958}
-  m_LocalPosition: {x: 25.51, y: -1.15851, z: 53.11}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: 21.9773, y: 0.61201, z: 78.90613}
+  m_LocalScale: {x: 0.8597491, y: 1, z: 0.6551259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1771377197}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 143.482, z: 0}
 --- !u!65 &2013356290
 BoxCollider:
@@ -16425,7 +16445,7 @@ GameObject:
   - component: {fileID: 2023602796}
   - component: {fileID: 2023602795}
   m_Layer: 0
-  m_Name: CameraTrigger (9)
+  m_Name: BackDoor(Outside)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16440,12 +16460,12 @@ Transform:
   m_GameObject: {fileID: 2023602793}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: -8.58, y: -1.15851, z: -25.99}
-  m_LocalScale: {x: 0.8597489, y: 1, z: 0.65512586}
+  m_LocalPosition: {x: -12.1126995, y: 0.61201, z: -0.19386959}
+  m_LocalScale: {x: 0.8597492, y: 1, z: 0.6551259}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 554663782}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &2023602795
 BoxCollider:
@@ -16634,12 +16654,12 @@ Transform:
   m_GameObject: {fileID: 2117286351}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.706882, z: -0, w: 0.7073316}
-  m_LocalPosition: {x: 1.46, y: 2.45, z: -29.82}
-  m_LocalScale: {x: 0.7026389, y: 0.63231, z: 0.71716905}
+  m_LocalPosition: {x: -2.0727, y: 4.22052, z: -4.0238695}
+  m_LocalScale: {x: 0.7026391, y: 0.63231, z: 0.7171692}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1117413805}
-  m_Father: {fileID: 296972581}
+  m_Father: {fileID: 367090095}
   m_LocalEulerAnglesHint: {x: 0, y: 89.964, z: 0}
 --- !u!65 &2117286353
 BoxCollider:
@@ -17034,3 +17054,4 @@ SceneRoots:
   - {fileID: 1415704731}
   - {fileID: 232207066}
   - {fileID: 323540443}
+  - {fileID: 367090095}

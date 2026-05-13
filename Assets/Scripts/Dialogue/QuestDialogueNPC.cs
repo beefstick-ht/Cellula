@@ -11,7 +11,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     public TextMeshProUGUI text;
     public Image dialogueBox;
     public Camera dialogueCam; //dedicated camera when talking to an npc
- 
+
     [Header("Dialogue Settings")]
     public float textSpeed = 0.05f;
     private int index;
@@ -19,6 +19,9 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     private string[] activeLines;  //depending on where the quest is at, the string will produce the respective lines
     public static bool IsInDialogue { get; private set; }
     private bool isLocked = false;//prevents reopening during cooldown
+
+    [Header("Rewards")]
+    public ItemData rewardItem;
 
     [Header("Quest Configuration")]
     public string requiredItemID = "";
@@ -47,18 +50,6 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
         outline.enabled = false;
     }
 
-    public bool CanInteract() => !typing; //if alr talking cannot talk
-
-    public void Interact() => StartDialogue();
-
-    public void OnFocusGained()
-    {
-        outline.enabled = true;
-    }
-
-    public void OnFocusLost() => outline.enabled = false;
-
-
     void Start()
     {
         text.text = string.Empty;
@@ -70,17 +61,29 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
         {
             if (text.text == activeLines[index])
             {
-                NextLine(); 
+                NextLine();
             }
             else
             {
                 StopAllCoroutines();
                 text.text = activeLines[index];
-                // update the UI text immediately when skipping
+                //skip text
                 DialoguePanelUI.instance.UpdateText(text.text);
             }
         }
     }
+
+    public bool CanInteract() => !typing; //if alr talking cannot talk
+
+    public void Interact() => StartDialogue();
+
+    public void OnFocusGained()
+    {
+        outline.enabled = true;
+    }
+
+    public void OnFocusLost() => outline.enabled = false;
+
     // this is called by Interactor script
     public bool Interact(Interactor interactor)
     {
@@ -102,16 +105,22 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
             {
                 activeLines = completionLines;
                 Inventory.instance.RemoveItem(requiredItemID);
-                questData.isQuestComplete = true; 
+
+                // give player reward for completing quest
+                if (rewardItem != null)
+                {
+                    Inventory.instance.AddItem(rewardItem.id);
+                    Debug.Log($"Received reward: {rewardItem.itemName}");
+                }
+
+                questData.isQuestComplete = true;
             }
-            else { activeLines = waitingLines; }
-        }
-        else
-        {
-            activeLines = introductionLines;
-            questData.hasAcceptedQuest = true; 
-        }
-     //item not in inventory yet
+            else
+            {
+                activeLines = introductionLines;
+                questData.hasAcceptedQuest = true;
+            }
+            //item not in inventory yet
 
             // turn on the panel through the dialoguepanelUI script
             DialoguePanelUI.instance.OpenPanel();
@@ -122,10 +131,11 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
             // Swap cameras and freeze the player
             dialogueCam.gameObject.SetActive(true);
-            
+
 
             StartCoroutine(TypeLine());
 
+        }
     }
 
         IEnumerator TypeLine()
@@ -161,19 +171,21 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
             text.text = string.Empty;
             DialoguePanelUI.instance.ClosePanel();
             dialogueCam.gameObject.SetActive(false);
-        StartCoroutine(DialogueCooldown());
+            StartCoroutine(DialogueCooldown());
 
-    }
-    IEnumerator DialogueCooldown()
-    {
-        isLocked = true;
-        // Keep IsInDialogue true so the Interactor ignores "E"
-        IsInDialogue = true;
+        }
+        IEnumerator DialogueCooldown()
+        {
+            isLocked = true;
+            // keep IsInDialogue true so the Interactor ignores "E"
+            IsInDialogue = true;
 
-        // Wait for exactly 2 seconds
-        yield return new WaitForSeconds(2f);
+            // wait for exactly 2 seconds
+            yield return new WaitForSeconds(2f);
 
-        isLocked = false;
-        IsInDialogue = false;
-    }
+            isLocked = false;
+            IsInDialogue = false;
+        }
+    
 }
+

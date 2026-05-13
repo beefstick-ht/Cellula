@@ -1,0 +1,13 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
+
+public class SceneSwitcher : MonoBehaviour
+{
+    public void GoTutScene()
+    {
+   
+        SceneManager.LoadScene("TutorialLevel");
+    }
+}

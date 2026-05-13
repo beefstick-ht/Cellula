@@ -21,7 +21,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     private bool isLocked = false;//prevents reopening during cooldown
 
     [Header("Rewards")]
-    public ItemData rewardItem;
+    //public ItemData rewardItem;
 
     [Header("Quest Configuration")]
     public string requiredItemID = "";
@@ -106,20 +106,21 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
                 activeLines = completionLines;
                 Inventory.instance.RemoveItem(requiredItemID);
 
-                // give player reward for completing quest
+             /*   // give player reward for completing quest
                 if (rewardItem != null)
                 {
                     Inventory.instance.AddItem(rewardItem.id);
                     Debug.Log($"Received reward: {rewardItem.itemName}");
-                }
+                }*/
 
                 questData.isQuestComplete = true;
             }
-            else
-            {
-                activeLines = introductionLines;
-                questData.hasAcceptedQuest = true;
-            }
+      
+        else
+        {
+            activeLines = introductionLines;
+            questData.hasAcceptedQuest = true; 
+        }
             //item not in inventory yet
 
             // turn on the panel through the dialoguepanelUI script

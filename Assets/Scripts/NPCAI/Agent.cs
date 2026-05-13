@@ -97,7 +97,7 @@ public class Agent : MonoBehaviour
         harpie.speed = 0f;
         //play the cool animation
         yield return new WaitForSeconds(5f);
-        harpie.speed = 1.3f;
+        harpie.speed = 3.5f;
         
         isStunned = false;
         Collider[] hits = Physics.OverlapSphere(transform.position, GetComponent<SphereCollider>().radius);

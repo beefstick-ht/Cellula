@@ -5082,6 +5082,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b2c13b204b7d77641aa47f63ec1166e2, type: 2}
   - {fileID: 11400000, guid: c94f59bec4e527f4f8160db32be6abfd, type: 2}
   - {fileID: 11400000, guid: 92c99795794acb64c961944a45b9c2b1, type: 2}
+  - {fileID: 11400000, guid: 2af234c2054db2c45979b7abc7b53ffb, type: 2}
   uiSlots:
   - {fileID: 1568181894}
   - {fileID: 1182558831}
@@ -5220,7 +5221,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 5fe5b5e374a9bae4baa17abf0ef36e50, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1

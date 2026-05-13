@@ -115,11 +115,12 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
                 questData.isQuestComplete = true;
             }
-            else
-            {
-                activeLines = introductionLines;
-                questData.hasAcceptedQuest = true;
-            }
+      
+        else
+        {
+            activeLines = introductionLines;
+            questData.hasAcceptedQuest = true; 
+        }
             //item not in inventory yet
 
             // turn on the panel through the dialoguepanelUI script

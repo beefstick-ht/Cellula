@@ -1,192 +1,316 @@
-using NUnit.Framework.Interfaces;
-using QuickOutline;
 using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class QuestDialogueNPC : MonoBehaviour, IInteractable
 {
+
     [Header("UI Components")]
+
     public TextMeshProUGUI text;
+
     public Image dialogueBox;
+
     public Camera dialogueCam; //dedicated camera when talking to an npc
 
     [Header("Dialogue Settings")]
+
     public float textSpeed = 0.05f;
+
     private int index;
+
     private bool typing = false;
-    private string[] activeLines;  //depending on where the quest is at, the string will produce the respective lines
+
+    private string[] activeLines; //depending on where the quest is at, the string will produce the respective lines
+
     public static bool IsInDialogue { get; private set; }
+
     private bool isLocked = false;//prevents reopening during cooldown
 
-    [Header("Rewards")]
-    public ItemData rewardItem;
 
     [Header("Quest Configuration")]
+
     public string requiredItemID = "";
+
     public bool hasAcceptedQuest = false;
+
     public bool isQuestComplete = false;
 
+
     [Header("NPC Lines")]
+
     [TextArea] public string[] introductionLines; // Talk for the first time
-    [TextArea] public string[] waitingLines;      // Talk while quest is active
-    [TextArea] public string[] completionLines;   // Talk when item is found
-    [TextArea] public string[] postQuestLines;     // Talk after quest is finished
+
+    [TextArea] public string[] waitingLines; // Talk while quest is active
+
+    [TextArea] public string[] completionLines; // Talk when item is found
+
+    [TextArea] public string[] postQuestLines; // Talk after quest is finished
+
 
     //all of the stuff below is in regards to the outline interactable
 
+
     private QuickOutline.Outline outline;
-    [SerializeField] private string npcName = "";  //have to pass in a name since interaface says this property must exist
+
+    [SerializeField] private string npcName = ""; //have to pass in a name since interaface says this property must exist
+
     public QuestData questData;
+
     public string DisplayName => npcName;
 
+
     void Awake()
+
     {
+
         outline = gameObject.AddComponent<QuickOutline.Outline>();
+
         outline.OutlineMode = QuickOutline.Outline.Mode.OutlineVisible;
+
         outline.OutlineColor = Color.yellow;
+
         outline.OutlineWidth = 5f;
+
         outline.enabled = false;
+
     }
 
-    void Start()
-    {
-        text.text = string.Empty;
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E) && typing)
-        {
-            if (text.text == activeLines[index])
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                text.text = activeLines[index];
-                //skip text
-                DialoguePanelUI.instance.UpdateText(text.text);
-            }
-        }
-    }
 
     public bool CanInteract() => !typing; //if alr talking cannot talk
 
+
     public void Interact() => StartDialogue();
 
+
     public void OnFocusGained()
+
     {
+
         outline.enabled = true;
+
     }
+
 
     public void OnFocusLost() => outline.enabled = false;
 
-    // this is called by Interactor script
-    public bool Interact(Interactor interactor)
+
+
+    void Start()
+
     {
-        StartDialogue();
-        return true;
+
+        text.text = string.Empty;
+
     }
 
-    public void StartDialogue()
+
+    void Update()
+
     {
-        IsInDialogue = true;
-        //npc decides which lines to use
-        if (questData.isQuestComplete)
+
+        if (Input.GetKeyDown(KeyCode.E) && typing)
+
         {
-            activeLines = postQuestLines;
-        }
-        else if (questData.hasAcceptedQuest)
-        {
-            if (Inventory.instance.HasItem(requiredItemID))
+
+            if (text.text == activeLines[index])
+
             {
+
+                NextLine();
+
+            }
+
+            else
+
+            {
+
+                StopAllCoroutines();
+
+                text.text = activeLines[index];
+
+                // update the UI text immediately when skipping
+
+                DialoguePanelUI.instance.UpdateText(text.text);
+
+            }
+
+        }
+
+    }
+
+    // this is called by Interactor script
+
+    public bool Interact(Interactor interactor)
+
+    {
+
+        StartDialogue();
+
+        return true;
+
+    }
+
+
+    public void StartDialogue()
+
+    {
+
+        IsInDialogue = true;
+
+        //npc decides which lines to use
+
+        if (questData.isQuestComplete)
+
+        {
+
+            activeLines = postQuestLines;
+
+        }
+
+        else if (questData.hasAcceptedQuest)
+
+        {
+
+            if (Inventory.instance.HasItem(requiredItemID))
+
+            {
+
                 activeLines = completionLines;
+
                 Inventory.instance.RemoveItem(requiredItemID);
 
-                // give player reward for completing quest
-                if (rewardItem != null)
-                {
-                    Inventory.instance.AddItem(rewardItem.id);
-                    Debug.Log($"Received reward: {rewardItem.itemName}");
-                }
-
                 questData.isQuestComplete = true;
+
             }
-      
-        else
-        {
-            activeLines = introductionLines;
-            questData.hasAcceptedQuest = true; 
+
+            else { activeLines = waitingLines; }
+
         }
-            //item not in inventory yet
 
-            // turn on the panel through the dialoguepanelUI script
-            DialoguePanelUI.instance.OpenPanel();
+        else
 
-            index = 0;
+        {
+
+            activeLines = introductionLines;
+
+            questData.hasAcceptedQuest = true;
+
+        }
+
+        //item not in inventory yet
+
+
+        // turn on the panel through the dialoguepanelUI script
+
+        DialoguePanelUI.instance.OpenPanel();
+
+
+        index = 0;
+
+        text.text = string.Empty;
+
+        typing = true;
+
+
+        // Swap cameras and freeze the player
+
+        dialogueCam.gameObject.SetActive(true);
+
+
+        StartCoroutine(TypeLine());
+
+
+    }
+
+
+    IEnumerator TypeLine()
+
+    {
+
+        //takes a full sentence and breaks it into an array of letters to type out one by one
+
+        foreach (char c in activeLines[index].ToCharArray())
+
+        {
+
+            text.text += c;
+
+            yield return new WaitForSeconds(textSpeed); //the typing effect
+
+            DialoguePanelUI.instance.UpdateText(text.text);
+
+        }
+
+    }
+
+
+    void NextLine()
+
+    {
+
+        if (index < activeLines.Length - 1)
+
+        {
+
+            index++;
+
             text.text = string.Empty;
-            typing = true;
-
-            // Swap cameras and freeze the player
-            dialogueCam.gameObject.SetActive(true);
-
 
             StartCoroutine(TypeLine());
 
         }
+
+        else
+
+        {
+
+            EndDialogue();
+
+
+        }
+
     }
 
-        IEnumerator TypeLine()
-        {
-            //takes a full sentence and breaks it into an array of letters to type out one by one
-            foreach (char c in activeLines[index].ToCharArray())
-            {
-                text.text += c;
-                yield return new WaitForSeconds(textSpeed); //the typing effect
-                DialoguePanelUI.instance.UpdateText(text.text);
-            }
-        }
 
-        void NextLine()
-        {
-            if (index < activeLines.Length - 1)
-            {
-                index++;
-                text.text = string.Empty;
-                StartCoroutine(TypeLine());
-            }
-            else
-            {
-                EndDialogue();
+    void EndDialogue()
 
-            }
-        }
+    {
 
-        void EndDialogue()
-        {
-            IsInDialogue = false;
-            typing = false;
-            text.text = string.Empty;
-            DialoguePanelUI.instance.ClosePanel();
-            dialogueCam.gameObject.SetActive(false);
-            StartCoroutine(DialogueCooldown());
+        IsInDialogue = false;
 
-        }
-        IEnumerator DialogueCooldown()
-        {
-            isLocked = true;
-            // keep IsInDialogue true so the Interactor ignores "E"
-            IsInDialogue = true;
+        typing = false;
 
-            // wait for exactly 2 seconds
-            yield return new WaitForSeconds(2f);
+        text.text = string.Empty;
 
-            isLocked = false;
-            IsInDialogue = false;
-        }
-    
+        DialoguePanelUI.instance.ClosePanel();
+
+        dialogueCam.gameObject.SetActive(false);
+
+        StartCoroutine(DialogueCooldown());
+
+
+    }
+
+    IEnumerator DialogueCooldown()
+
+    {
+
+        isLocked = true;
+
+        // Keep IsInDialogue true so the Interactor ignores "E"
+
+        IsInDialogue = true;
+
+
+        // Wait for exactly 2 seconds
+
+        yield return new WaitForSeconds(2f);
+
+
+        isLocked = false;
+
+        IsInDialogue = false;
+
+    }
 }
-

@@ -7,7 +7,7 @@ public class SceneSwitcher : MonoBehaviour
 {
     public void GoTutScene()
     {
-        Debug.Log("Button Pressed! Attempting to load TutorialLevel...");
+   
         SceneManager.LoadScene("TutorialLevel");
     }
 }

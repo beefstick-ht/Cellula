@@ -1215,6 +1215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseVar2
       objectReference: {fileID: 0}
+    - target: {fileID: 3297039775549099330, guid: 2b9076d204968444992983431894ee2d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4643098946571964434, guid: 2b9076d204968444992983431894ee2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24
@@ -2001,6 +2005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseVar3
       objectReference: {fileID: 0}
+    - target: {fileID: 8800228434690943021, guid: 3c84e31bd11f64b4999cbf997db21f20, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2155,6 +2163,10 @@ PrefabInstance:
     - target: {fileID: 282969352868069319, guid: c9cd7d0adf179d9438ae0d2a0b86d2fb, type: 3}
       propertyPath: m_Name
       value: Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 282969352868069319, guid: c9cd7d0adf179d9438ae0d2a0b86d2fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8831020716413911892, guid: c9cd7d0adf179d9438ae0d2a0b86d2fb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2722,6 +2734,10 @@ PrefabInstance:
     - target: {fileID: 279458276494810014, guid: b54fe3cf47aeb3b45b182bec5f71619d, type: 3}
       propertyPath: m_Name
       value: HouseVar5
+      objectReference: {fileID: 0}
+    - target: {fileID: 279458276494810014, guid: b54fe3cf47aeb3b45b182bec5f71619d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3923201814133152407, guid: b54fe3cf47aeb3b45b182bec5f71619d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3463,6 +3479,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HouseVar1
       objectReference: {fileID: 0}
+    - target: {fileID: 6697030516316232295, guid: 848aa13b2edebca41913307e73ddd70b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3722,6 +3742,10 @@ PrefabInstance:
     - target: {fileID: 2875302853436726042, guid: b66dbdedf6894e44092e0bc8b87b5ddc, type: 3}
       propertyPath: m_Name
       value: HouseVar4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2875302853436726042, guid: b66dbdedf6894e44092e0bc8b87b5ddc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6793274856102197765, guid: b66dbdedf6894e44092e0bc8b87b5ddc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8745,6 +8769,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House3
       objectReference: {fileID: 0}
+    - target: {fileID: 8414349576385928129, guid: cb7423be0745c274fbea19ee8912e125, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11834,6 +11862,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House1
       objectReference: {fileID: 0}
+    - target: {fileID: 2958483915003524465, guid: d84d6fa98858c77489f5120552ef666d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6535541517200341200, guid: d84d6fa98858c77489f5120552ef666d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.391449
@@ -14155,6 +14187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House4
       objectReference: {fileID: 0}
+    - target: {fileID: 5640119263918088054, guid: f0117746aa5b960448e746c8972ab6f7, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15006,6 +15042,10 @@ PrefabInstance:
     - target: {fileID: 2456849745952418375, guid: 00a45aca4842f5d43a39fcb9a4778491, type: 3}
       propertyPath: m_Name
       value: House2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456849745952418375, guid: 00a45aca4842f5d43a39fcb9a4778491, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6327980319562654267, guid: 00a45aca4842f5d43a39fcb9a4778491, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16760,6 +16800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: House5
       objectReference: {fileID: 0}
+    - target: {fileID: 9018040674847187074, guid: 2f7e1bebec4a4124286753154dfbe8ab, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17282,6 +17326,10 @@ PrefabInstance:
     - target: {fileID: 2447404305114944093, guid: 4ef71555e82999d458c64f5d29df2ee0, type: 3}
       propertyPath: m_Name
       value: Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 2447404305114944093, guid: 4ef71555e82999d458c64f5d29df2ee0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6774363747779848944, guid: 4ef71555e82999d458c64f5d29df2ee0, type: 3}
       propertyPath: m_LocalPosition.x

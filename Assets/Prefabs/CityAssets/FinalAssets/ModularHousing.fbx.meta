@@ -1,0 +1,320 @@
+fileFormatVersion: 2
+guid: cc451003af9101441a5652a43af24d97
+ModelImporter:
+  serializedVersion: 24200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArchwayMTL
+    second: {fileID: 2100000, guid: 13e3691c4adc67b4db34df84aa9ab402, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door1MTL
+    second: {fileID: 2100000, guid: 0100b18e6e8236f4b9ce39175941a1df, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door2MTL
+    second: {fileID: 2100000, guid: 2b76f2adee1d9184c999dc630b8824d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door4MTL
+    second: {fileID: 2100000, guid: 52b188598c4ffd246934d52834d42b6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HalfRoof1MTL
+    second: {fileID: 2100000, guid: 255579adf83f4584e9ed8209f0a69ce3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HalfRoof2MTL
+    second: {fileID: 2100000, guid: fac66dd13e5243d4f8775186b05398b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: HalfRoof3MTL
+    second: {fileID: 2100000, guid: 63e2563714ac9e74896af0274aa34558, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LongArchwayMTL
+    second: {fileID: 2100000, guid: 26a482be769577a46bb100043f5c6053, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MBaseMTL
+    second: {fileID: 2100000, guid: 10a12e106dad54644b35374d1e1c4fbb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MetalMTL
+    second: {fileID: 2100000, guid: a802df1f1df6c4646b77d9e5fae869fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RoundWindowMTL
+    second: {fileID: 2100000, guid: 0ee7df84d44296447b9dda1b9e434c53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SBaseMTL
+    second: {fileID: 2100000, guid: b719471e83cad4445a67ff3b6775b46c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TentRoof1MTL
+    second: {fileID: 2100000, guid: e3701c6e88472b142859c7b87fb69d48, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TentRoof2MTL
+    second: {fileID: 2100000, guid: de8df14c3e567c143987447c6dcad0e0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TentRoof3MTL
+    second: {fileID: 2100000, guid: 555c4930e1b69764c9444539a7afb05b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WindowMTL
+    second: {fileID: 2100000, guid: b5b7b27b74072f24882156f3c5b46c10, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_Door1MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: bd4d039f5e33eac4cb6782ac2918f866, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_Door1MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 803eeb39dfd1a74498be6c87a7ef6fd8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_Door2MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 03ab06496fc77e346be74027bf930df5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_Door2MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 173da80d9ab7f084080ee3f32e8e9c32, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_Door4MTL_BaseColor.1002
+    second: {fileID: 2800000, guid: 7f9973f4be893124097f30e5dc9c5648, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_Door4MTL_Roughness.1002
+    second: {fileID: 2800000, guid: 7ac45da7765696e40bf6224a65751e71, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_HalfRoof1MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 0338ef60c362f2a44ad78e446b820a8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_HalfRoof1MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 74392cebc347644469e924aa8403115f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_HalfRoof2MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: c959a92ef64dc804ba7f819d7c4b744a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_HalfRoof2MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 80892cca1595b4f469ef3bc25e9d65ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_HalfRoof3MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 8e6851c580c53d24ebb5ed0e31052982, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_HalfRoof3MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 303810ae97b0c1340863001552863a2d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_LongArchwayMTL_BaseColor.1001
+    second: {fileID: 2800000, guid: fa75a8ff21dce214da54022c254df113, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_LongArchwayMTL_Roughness.1001
+    second: {fileID: 2800000, guid: 08ccace2d9025664a934a3fae81f621c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_MBaseMTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 5a2bd56d5e96ba047b9cebf2e415ed51, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_MBaseMTL_Roughness.1001
+    second: {fileID: 2800000, guid: 6287cb4208f4f5c41bcae5e61eaacbee, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_SBaseMTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 974cbb9e6dafba74287e56a3647727b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_SBaseMTL_Roughness.1001
+    second: {fileID: 2800000, guid: 1abed32bee343964db474e48a2f6b6fd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_TentRoof1MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 11490f556b4ba04419cd5169d9e32b2b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_TentRoof1MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 66095b327515ac743b225960526edbf3, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_TentRoof2MTL_BaseColor.1001
+    second: {fileID: 2800000, guid: c318411323a84c949ab82faaa1facbbc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_TentRoof2MTL_Roughness.1001
+    second: {fileID: 2800000, guid: 89b3d69b60ee859498a390f56a81245d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_TentRoof3MTL_1_BaseColor.1001
+    second: {fileID: 2800000, guid: 6ddc6e79c493c944091ddc6e12b60176, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_TentRoof3MTL_1_Roughness.1001
+    second: {fileID: 2800000, guid: a53a148fa29fefd4188b5eba98555172, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ModularHousing_WindowMTL_BaseColor.1001
+    second: {fileID: 2800000, guid: 6ae8a44c7d6bd71458939907f5d29401, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: rusty_metal_04_diff_1k
+    second: {fileID: 2800000, guid: 7810feb1e5d55ca41a681a23450b1296, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    generateMeshLods: 0
+    meshLodGenerationFlags: 0
+    maximumMeshLod: -1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

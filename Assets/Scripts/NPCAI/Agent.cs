@@ -55,6 +55,13 @@ public class Agent : MonoBehaviour
                 Attack();
                 break;
         }
+        float speedValue = harpie.speed;
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", speedValue);
+            anim.SetBool("Stunned", isStunned);
+            anim.SetBool("Attack", isAttacking);
+        }
     }
 
 
@@ -69,20 +76,20 @@ public class Agent : MonoBehaviour
         {
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
         }
-        if (anim != null)
+       /* if (anim != null)
         {
             anim.SetFloat("Speed", speedValue);
-        }
+        }*/
     }
     public void Stalk()
     {
         float speedValue = harpie.speed;
         harpie.speed = 3.5f;
         harpie.SetDestination(player.position);
-        if(anim != null)
+        /*if(anim != null)
         {
             anim.SetFloat("Speed", speedValue);
-        }
+        }*/
     }
     public void Stunned()
     {
@@ -90,10 +97,10 @@ public class Agent : MonoBehaviour
         {
             StartCoroutine(Stun());
         }
-        if(anim != null)
+        /*if(anim != null)
         {
             anim.SetBool("Stunned", isStunned);
-        }
+        }*/
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -123,7 +130,7 @@ public class Agent : MonoBehaviour
         {
             isAttacking = true;
             deathCam.gameObject.SetActive(true);
-            anim.SetBool("Attack", isAttacking);
+            //anim.SetBool("Attack", isAttacking);
         }
         Debug.Log("YouDied!");
         

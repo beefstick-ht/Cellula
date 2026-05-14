@@ -8,7 +8,8 @@ public class Agent : MonoBehaviour
     { 
         Roam = 0, 
         Stalk = 1, 
-        Stunned = 2 
+        Stunned = 2,
+        Attack = 3
     }
     public EnemyState state;
     public Transform[] waypoints;
@@ -19,9 +20,13 @@ public class Agent : MonoBehaviour
     NavMeshAgent harpie;
     public float speed;
     public bool isStunned;
+    public bool isAttacking;
+   
+    
     public Animator anim;
 
-
+    [Header("Death UI")]
+    public Camera deathCam;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,22 +51,45 @@ public class Agent : MonoBehaviour
             case EnemyState.Stunned:
                 Stunned();
                 break;
+            case EnemyState.Attack:
+                Attack();
+                break;
+        }
+        float speedValue = harpie.speed;
+        if (anim != null)
+        {
+            anim.SetFloat("Speed", speedValue);
+            anim.SetBool("Stunned", isStunned);
+            anim.SetBool("Attack", isAttacking);
         }
     }
 
 
-    public void Stalk()
-    {
-        harpie.SetDestination(player.position);
-    }
+
     public void Roam()
     {
+        float speedValue = harpie.speed;
+        harpie.speed = 1.2f;
         harpie.SetDestination(waypoints[currentWaypoint].position);
         float distance = Vector3.Distance(transform.position, waypoints[currentWaypoint].position);
         if(distance < 1f)
         {
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
         }
+       /* if (anim != null)
+        {
+            anim.SetFloat("Speed", speedValue);
+        }*/
+    }
+    public void Stalk()
+    {
+        float speedValue = harpie.speed;
+        harpie.speed = 3.5f;
+        harpie.SetDestination(player.position);
+        /*if(anim != null)
+        {
+            anim.SetFloat("Speed", speedValue);
+        }*/
     }
     public void Stunned()
     {
@@ -69,6 +97,10 @@ public class Agent : MonoBehaviour
         {
             StartCoroutine(Stun());
         }
+        /*if(anim != null)
+        {
+            anim.SetBool("Stunned", isStunned);
+        }*/
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -89,6 +121,19 @@ public class Agent : MonoBehaviour
     public void RegisterStun()
     {
         state = EnemyState.Stunned;
+    }
+
+    public void Attack()
+    {
+        float playerDistance = Vector3.Distance(transform.position, player.position);
+        if (playerDistance < 2f)
+        {
+            isAttacking = true;
+            deathCam.gameObject.SetActive(true);
+            //anim.SetBool("Attack", isAttacking);
+        }
+        Debug.Log("YouDied!");
+        
     }
 
     IEnumerator Stun()

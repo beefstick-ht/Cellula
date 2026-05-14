@@ -15,6 +15,6 @@ MonoBehaviour:
   id: Pear
   itemName: Pear
   icon: {fileID: -1215242195, guid: 6334cc353506723438f3af5f4d9921a1, type: 3}
-  highlightedIcon: {fileID: -1416176992, guid: 6334cc353506723438f3af5f4d9921a1, type: 3}
+  highlightedIcon: {fileID: 907566831, guid: 6334cc353506723438f3af5f4d9921a1, type: 3}
   description: A pear from the fruit stand. Looks kinda rotten...
   isEquippable: 0

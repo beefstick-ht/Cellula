@@ -1,0 +1,13 @@
+# Blender 3.3.2 Release Candidate MTL File: '20_Frank.blend'
+# www.blender.org
+
+newmtl Yirmi_Frank
+Ns 336.400055
+Ka 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd 20-frankovs-serii-Angel-min.png
+map_Ks SpecularMap.png
+map_Bump -bm 1.000000 NormalMap.png

@@ -38,12 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lake.unity
     guid: 3ba7c07bace0a6742a5ee0019a81e3ee
-  - enabled: 1
-    path: Assets/Scenes/ChurchBasement.unity
-    guid: 1c34b9c2f4ae25b45850d24b38d1f6ae
-  - enabled: 1
-    path: Assets/Scenes/ChurchInterior.unity
-    guid: 2d55640894e5797408aebe1ca2836939
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

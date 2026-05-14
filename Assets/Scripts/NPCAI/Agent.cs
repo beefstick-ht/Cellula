@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Agent : MonoBehaviour
 {
@@ -123,6 +124,13 @@ public class Agent : MonoBehaviour
         state = EnemyState.Stunned;
     }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag ("Player"))
+        {
+            SceneManager.LoadScene("forestLevel)");
+        }
+    }
     public void Attack()
     {
         float playerDistance = Vector3.Distance(transform.position, player.position);

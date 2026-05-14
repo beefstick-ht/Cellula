@@ -1,9 +1,29 @@
 fileFormatVersion: 2
-guid: aec8ded37ca2677409c93477d77b3b1c
+guid: 5916c951ed47c9a47a37f71a491e33d1
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChurchFloorMTL
+    second: {fileID: 2100000, guid: 337eed9c9ea48eb41859d38e37e87a0f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChurchInteriorWallMTL
+    second: {fileID: 2100000, guid: bab7998c3089fd641a68aef411b5a824, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChurchStoneMTL
+    second: {fileID: 2100000, guid: c13831069818cbf4688da6d1fb169ba5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ChurchTransMTL
+    second: {fileID: 2100000, guid: b27b7bc667843ed4c842bedc46918b27, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -33,7 +53,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1

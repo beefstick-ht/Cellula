@@ -237,7 +237,7 @@ MonoBehaviour:
   postQuestLines:
   - Alright, off with you! Don't want the shops to close before you get there, do
     you?
-  npcName: guy
+  npcName: Pops
   questData: {fileID: 11400000, guid: f18cd664a761bf34e8d2cfd2cacc56af, type: 2}
 --- !u!65 &39567231
 BoxCollider:

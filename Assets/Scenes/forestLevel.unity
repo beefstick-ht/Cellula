@@ -17,15 +17,15 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.08992392, g: 0.05531328, b: 0.103773594, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 2.45
   m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.081301175, g: 0.11436115, b: 0.1981132, a: 1}
+  m_SubtractiveShadowColor: {r: 0.07863118, g: 0.13565022, b: 0.2924528, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 1f3106eb4710d674fba26f2cef57b55f, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f7919adccc97f5d4a9642b029bb9283b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -15412,7 +15412,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444828857}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.012897352, y: -0.543879, z: -0.0028880278, w: -0.83905953}
+  m_LocalRotation: {x: -0.012897184, y: -0.543879, z: -0.0028879857, w: -0.83905953}
   m_LocalPosition: {x: -346.94403, y: 4.3489337, z: 29.443233}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -18633,8 +18633,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 33.86083, y: 1, z: 39.05578}
-  m_Center: {x: 11.62852, y: 0, z: 11.460156}
+  m_Size: {x: 33.86083, y: 1, z: 30.472555}
+  m_Center: {x: 11.628521, y: 0, z: 7.1685653}
 --- !u!4 &1707570927
 Transform:
   m_ObjectHideFlags: 0

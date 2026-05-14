@@ -32,6 +32,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/forestLevel.unity
     guid: 6158832685ff1094c9924fc60b1c7453
+  - enabled: 1
+    path: Assets/Scenes/Church.unity
+    guid: 9b0caf148fd0a1c4a94e6cfe67ef434c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

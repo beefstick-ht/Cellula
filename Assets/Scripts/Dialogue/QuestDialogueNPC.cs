@@ -17,11 +17,11 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
 
     public float textSpeed = 0.05f;
 
-    private int index;
+    protected int index;
 
-    private bool typing = false;
+    protected bool typing = false;
 
-    private string[] activeLines; //depending on where the quest is at, the string will produce the respective lines
+    protected string[] activeLines; //depending on where the quest is at, the string will produce the respective lines
 
     public static bool IsInDialogue { get; private set; }
 
@@ -152,7 +152,7 @@ public class QuestDialogueNPC : MonoBehaviour, IInteractable
     }
 
 
-    public void StartDialogue()
+    public virtual void StartDialogue()
 
     {
 
